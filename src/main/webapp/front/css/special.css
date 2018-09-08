@@ -1,0 +1,45 @@
+@charset "utf-8";
+.special{width: 1200px;height: 500px;margin: 25px auto 0;overflow: hidden;background: #036eb8;}
+.wrapCon{width: 1200px;margin: 0 auto 30px;overflow: hidden;background: #ffffff;}
+.wrapCon .allSpecial{width: 800px;overflow: hidden;margin-top: 15px;margin-left: 15px;}
+.indexTitle,.linkTitle{ height:40px;  position:relative;border-bottom: 3px solid #d7d7d7;
+     margin-bottom: 10px;}
+.indexTitle p,.linkTitle p{ position:absolute; left:0; top:0;height:38px; line-height:41px;  font-size:20px; color: #333333;  }
+.indexTitle p.title{font-size: 20px;width: 101px;float: left;border-bottom: 3px solid #0068ac;color: #0068ac;font-weight: bold;height: 40px; }
+.linkTitle p.title{font-size: 20px;width: 90px;float: left;color: #0068ac;font-weight: bold;text-align: center;height: 46px; }
+.indexTitle .more,.linkTitle .more{ color:#999999; float:right; line-height:50px;font-size: 12px;}
+
+.allSpecial .wrapDetail{overflow: hidden;}
+.specialCon{display: block;border-left: 3px dashed #ffffff;  border-bottom: 1px dotted #eaeaea;
+    width: 797px;padding: 20px 0 15px 0;overflow: hidden; }
+.specialCon img{width: 150px;height: 100px;margin-left: 10px;display: block;float: left;    border-radius: 3px;}
+.specialCon .intro{float: left;margin-left: 20px;width: 615px;}
+.intro h3{font-size: 16px;margin-bottom: 5px;font-weight: normal;}
+.intro span{display: block;color: #999999; }
+.intro p{line-height: 20px;margin-top: 5px;width:610px; }
+.specialCon:hover{border-left: 3px solid #036eb8;background: #f8f8f8;}
+.specialCon:hover h3{color: #036eb8;}
+.pages{overflow: hidden;text-align: center;width: 860px;margin: 40px auto;}
+.pages ul{overflow: hidden;margin-left: 250px;}
+.pages ul li{display: block;float: left;padding: 5px 10px;margin-left: 10px;border: 1px solid #dddddd;cursor: pointer;}
+.pages ul li:hover,.pages ul li.cur{background:#036eb8;border: 1px solid #036eb8;color: #ffffff;}
+
+.wrapCon .specialList,.seriesSpecial{width: 350px;overflow: hidden;margin-top: 15px;margin-right: 5px;}
+.ltSpe{overflow: hidden;}
+.ltSpe a{display: block;  overflow: hidden;float: left;border-radius: 2px;
+    padding: 12px 11px 10px 11px;  border: 1px solid #ffffff;  }
+.ltSpe a img{display: block;width: 150px;height: 100px;border-radius: 3px;}
+.ltSpe a h4{font-size: 14px;width: 150px;overflow: hidden;white-space: nowrap;
+    text-overflow: ellipsis;-ms-text-overflow: ellipsis;line-height: 25px;color: #333333;}
+.ltSpe a p{font-size: 14px;color: #666666;width: 150px;overflow: hidden;white-space: nowrap;
+    text-overflow: ellipsis;-ms-text-overflow: ellipsis;}
+.ltSpe a:hover{ border: 1px solid #036eb8;background: #f0f0f0;}
+.ltSpe a:hover h4{color: #036eb8;}
+
+
+.seriesSpecial ul{width: 100%;overflow: hidden;font-size: 14px;}
+.seriesSpecial ul li{display: block;overflow: hidden;background: url(../images/icon_special.png) no-repeat left center;padding-left: 22px;}
+.seriesSpecial ul li a{display: block;float: left;line-height: 30px;width: 325px;overflow: hidden;white-space: nowrap;text-overflow: ellipsis;}
+.seriesSpecial ul li a:hover{color: #036eb8;}
+
+

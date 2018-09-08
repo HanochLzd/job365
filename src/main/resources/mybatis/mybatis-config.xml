@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+
+<configuration>
+    <settings>
+        <setting name="lazyLoadingEnabled" value="false"/>
+        <!-- 处理字段值为空，列表不返回该字段 -->
+        <setting name="callSettersOnNulls" value="true"/>
+    </settings>
+
+    <!-- 配置实体类别名 -->
+    <typeAliases>
+        <package name="cn.soft.job.sys.pojo.po"/>
+        <package name="cn.soft.job.web.pojo.po"/>
+    </typeAliases>
+</configuration>

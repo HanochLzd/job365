@@ -1,0 +1,42 @@
+@charset "utf-8";
+body{font-family:'SimSun';background: #ffffff; }
+.wrapLogin{width: 100%;background: #f0f0f0;height: 40px;}
+.wrapLogin .login{height: 40px;width: 950px;margin: 0 auto;}
+.login span{float: left;display: block;border-radius: 5px;}
+.login .time span{margin-right: 10px;font-size: 14px;margin-top: 8px;}
+.login .register span{background:#3c8abd;color: #ffffff;cursor: pointer; padding:3px 10px 5px 10px;margin-left: 10px;font-size: 16px;margin-top: 5px;}
+.login .register span:hover{background:#2b7bb0;}
+
+.com{width: 950px;margin: 0 auto}
+.banner{height: 220px;}
+.banner img{width: 950px;height: 220px;}
+.wrapCon{overflow: hidden;margin-top: 20px;}
+.slideNav{width: 200px;background: url("../images/bg.gif") no-repeat;height: 450px; }
+.slideNav ul{overflow: hidden}
+.slideNav ul li a {  display: block;  text-align: center;  color: #00561f;  font-weight: 600;  line-height: 45px;  }
+.slideBox{width: 750px;overflow: hidden;}
+.briefIntro{width: 428px;  height:217px;background: url("../images/jjbg1.gif") no-repeat;}
+.briefIntro .introduce{width: 386px;margin: 40px 0 0 23px;}
+.introduce a{display: block}
+.introduce p{line-height: 20px;}
+.introduce span{line-height: 30px;}
+.introduce a:hover{color: red;}
+.informNews{width: 319px;height: 217px;background: url("../images/hdtz.gif") no-repeat;}
+.informNews ul{overflow: hidden;width: 265px;margin: 40px 0 0 30px;}
+.informNews ul li{line-height: 20px;}
+.informNews ul li a:hover{color:red; }
+.tabCla{overflow: hidden;margin-top: 15px;width: 750px;clear: both;}
+.tabCla .title{height: 36px;width: 100%}
+.tabCla .tabNav{width: 750px;height: 30px;background: url("../images/title_bq.gif") repeat-x;margin-top: 20px;}
+.tabNav ul{width:660px;float: left; }
+.tabNav ul li{display: block;float: left;line-height: 30px;padding: 0 20px;cursor: pointer;}
+.tabNav ul li.cur {  background-color: #ffffff;  color: #0068A3;  font-weight: 600;  }
+.tabNav a{display: block;float: right;margin-right: 10px;line-height: 25px;}
+.tabCla .tabBox{border: 1px solid #aacbee;overflow: hidden;
+    border-top: none;}
+.tabBox a{display: block;float: left;margin: 10px 0 10px 23px;}
+.tabBox a img{height: 100px;  width: 150px;  border: 1px solid #cfcfcf;  display: block;  padding: 3px;}
+.tabBox a span{width:150px;display: block;line-height: 30px;overflow: hidden;text-overflow: ellipsis;white-space: nowrap; }
+.footer{margin-top: 20px;padding: 10px 0;border-top: 5px solid #aacbee;}
+.footer p{text-align: center;line-height: 20px; }
+.footer p span{padding-right: 10px;}

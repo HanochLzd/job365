@@ -1,0 +1,37 @@
+@charset "utf-8";
+body{font-family:'SimSun';background: #ffffff; }
+/*登录*/
+.wrapLogin{width: 100%;background: #f0f0f0;height: 40px;}
+.wrapLogin .login{height: 40px;width: 950px;margin: 0 auto;}
+.login span{float: left;display: block;border-radius: 5px;}
+.login .time span{margin-right: 10px;font-size: 14px;margin-top: 8px;}
+.login .register span{background:#3c8abd;color: #ffffff;cursor: pointer; padding:3px 10px 5px 10px;margin-left: 10px;font-size: 16px;margin-top: 5px;}
+.login .register span:hover{background:#2b7bb0;}
+
+.com{width: 950px;margin: 0 auto}
+.banner{height: 198px;}
+.banner img{width: 950px;height: 198px;}
+.nav{ height: 37px;  background: url(../images/nav.gif) repeat-x;margin: 0 auto;}
+.nav ul{overflow: hidden}
+.nav ul li{line-height: 37px;display: inline-table;}
+.nav ul li a{padding: 0 20px; color: #fff;  font-size: 15px;}
+.wrapInform{margin-top: 25px;overflow: hidden}
+.forum{width: 220px; margin-right: 15px;}
+.forum img.gj{margin-bottom:10px;width: 220px;height: 142px;}
+.inform,.file{border: 1px solid #8fc41f;width: 440px;padding-bottom: 10px;min-height: 300px;}
+.inform .title,.file .title{height: 30px;background: url("../images/title.gif") repeat-x;color: #00561f;
+    padding-left: 15px;font-size: 14px;font-weight: bold;line-height: 30px;}
+.inform ul,.file ul{margin:0 15px ;}
+.inform ul li{line-height: 25px;}
+.inform ul li a,.file ul li a{display: block;width: 400px;overflow: hidden;text-overflow: ellipsis;white-space: nowrap;}
+.inform ul li a:hover,.file ul li a:hover{color: red;}
+.file ul li{line-height: 25px;width: 320px;}
+.actFlow{overflow: hidden;margin: 15px auto;}
+.actFlow img{width: 950px;height: 63px;}
+.wrapTec{overflow: hidden;margin-top:50px}
+.wrapTec .inform{width: 948px;}
+.wrapTec .inform ul li a{width: 280px;}
+.wrapTec .fl{margin-right: 7px;margin-bottom:50px}
+.footer{margin-top: 20px;padding: 10px 0;}
+.footer p{text-align: center;line-height: 20px; }
+.footer p span{padding-right: 10px;}

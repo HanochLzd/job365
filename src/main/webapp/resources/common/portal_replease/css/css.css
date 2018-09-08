@@ -1,0 +1,142 @@
+/* CSS Document */
+*{margin:0px;
+padding:0px;
+border:0px;}
+body{background:#FFF;}
+
+/*页面开始*/
+.main_nav{
+	width:1024px;
+	height:40px;
+	background-color:#ebebeb;
+	margin-left:15px;
+	margin-top:35px;
+	padding:10px 10px;
+}
+.main_content{width:1024px; background-color: #ebebeb; margin-bottom:30px; margin-top:20px; padding:0px 20px 0px;}
+
+.menu_left {
+    background-image: url(../images/150_1.png);
+    background-repeat: no-repeat;
+    width: 241px;
+    height: 729px;
+	margin-left:-1.5%;
+    /* margin-left: 28px; */
+}
+.d20 {
+    background-image: url(../images/151.png);
+    background-repeat: no-repeat;
+    width: 218px;
+    height: 38px;
+    color: #FFFFFF;
+    text-align: center;
+    padding-top: 8px;
+}
+a:hover { text-decoration:none;color: red}
+
+.menu_right{
+	
+    height: 727px;
+    margin: 0 auto;
+	width:760px;
+	float:right;
+    margin-top:-74%;
+}
+.search_area {
+    border: 0 dashed #72ad4e;
+	
+}
+.btn_search {
+    background-color: #3B9BD8;
+    font-family: "Microsoft YaHei","FZLTXHK";
+    font-size: 16px;
+    overflow: visible;
+    cursor: pointer;
+    cursor: hand;
+    color: #fff;
+    background-image: url(../images/icon_search_24.png);
+    background-repeat: no-repeat;
+    background-position: 10px center;
+    outline: 0;
+    border: 0;
+    border-radius: 5px;
+    padding: 7px 20px;
+	margin-top:15px;
+}
+input {
+    border: 1px solid #ccc;
+    font-family: Verdana,Tahoma;
+    font-size: 14px;
+    vertical-align: middle;
+    padding: 8px;
+    border-radius: 3px;
+	margin-top:15px;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+tbody {
+    display: table-row-group;
+    vertical-align: middle;
+    border-color: inherit;
+}
+
+tr{
+	display: table-row;
+    vertical-align: inherit;
+    border-color: inherit;
+}
+.td30_left {
+    background-image: url(../images/115_left.png);
+    background-repeat: no-repeat;
+    width: 7px;
+    height: 32px;
+}
+
+.td30_mid{
+	background-image: url(../images/115_mid.png);
+    background-repeat: repeat-x;
+    padding-left: 17px;
+    padding-right: 17px;
+    height: 32px;
+}
+.td30_right {
+    background-image: url(../images/115_right.png);
+    background-repeat: no-repeat;
+    width: 7px;
+    height: 32px;
+}
+.read{padding:30px 0px 25px; border-bottom:1px #ddd solid;margin-bottom: 20px;}
+
+
+
+
+/*完善信息*/
+
+
+
+
+/*修改密码*/
+
+
+
+
+
+/*招聘信息*/
+
+
+
+
+/*发布活动*/
+
+.tr11 {
+    background-color: #3B9BD8;
+    height: 32px;
+	margin-top:15px;
+}
+
+ 
+ 
+ 
+ 

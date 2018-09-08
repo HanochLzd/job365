@@ -1,0 +1,25 @@
+@charset "utf-8";
+.inform{width: 1198px;margin: 0 auto;height: 40px;background: #f9f9f9;border: 1px solid #d7d7d7;}
+.inform h3 {  width: 75px;  float: left;  font-size: 14px;  font-weight: normal;  height: 22px;
+    background: url("../images/inform.png") no-repeat 0px 1px;  overflow: hidden;  margin-top: 10px;  padding-left: 30px;  margin-left: 20px; }
+.inform .informCon {  overflow: hidden;  width: 1060px;  margin-left: 10px; float: left }
+.informCon  ul {  float: left;  height: 40px;  overflow: hidden;  zoom: 1;  width: 1060px  }
+.informCon  ul li {  line-height: 40px;  list-style: none;  font-size: 14px;  width: 1030px;  height: 40px;background: url(../images/icon.png) no-repeat left center;padding-left: 5px;}
+.informCon  ul li a { color: #666666;  text-decoration: none; display: block;float: left;width: 900px; overflow: hidden;text-overflow: ellipsis;white-space: nowrap;}
+.informCon  ul li  span{display: block;float: right;color: #999999;}
+
+.wrapCon{width: 1200px;margin: 0 auto 40px;overflow: hidden;}
+.wrapCon .news{width: 386px;float: left;margin-top: 25px;}
+.wrapCon .djxw,.wrapCon .zcfg,.wrapCon .xxjs,.wrapCon .ycjy,.wrapCon .yxcb,.wrapCon .djgz{margin-right: 20px;}
+
+.indexTitle,.linkTitle{ height:40px;  position:relative;border-bottom: 3px solid #d7d7d7;}
+.indexTitle p,.linkTitle p{ position:absolute; left:0; top:0;height:38px; line-height:41px;  font-size:20px; color: #333333;  }
+.indexTitle p.title{font-size: 20px;width: 90px;float: left;border-bottom: 3px solid #0068ac;color: #0068ac;font-weight: bold;text-align: center;height: 40px; }
+.linkTitle p.title{font-size: 20px;width: 90px;float: left;color: #0068ac;font-weight: bold;text-align: center;height: 46px; }
+.indexTitle .more,.linkTitle .more{ color:#999999; float:right; line-height:50px;font-size: 12px;}
+.news ul{width: 100%;overflow: hidden;font-size: 14px;}
+.news ul li{display: block;overflow: hidden;background: url(../images/icon.png) no-repeat left center;padding-left: 5px;}
+.news ul li a{display: block;float: left;line-height: 30px;width: 300px;overflow: hidden;white-space: nowrap;text-overflow: ellipsis;}
+.news ul li span{display: block;float: right;width:50px; text-align: right;color: #666666;}
+.news ul li a:hover{color: #036eb8;}
+.wrapCon img{width: 1200px;height: 90px;margin-top: 30px;}

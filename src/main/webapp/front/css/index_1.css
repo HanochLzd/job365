@@ -1,0 +1,82 @@
+@charset "utf-8";
+.content .news{width: 100%;overflow: hidden;margin-top: 20px;}
+.news .wrapBanner{width: 100%;height: 380px;float: left;position: relative}
+
+
+.banner{width: 712px;height: 380px;}
+.banner .d1{  width: 100%;;height:380px;display:block;position:absolute;left:0px;cursor: pointer;}
+.banner .d1 .des{width:1200px; height:36px;line-height: 36px;font-size: 14px; background:url(../images/titleBg.png) repeat-x; position:absolute; left:-1px; bottom:-1px; color:#ffffff;background-size: cover; padding-left:10px; overflow:hidden; white-space:nowrap;text-overflow: ellipsis;}
+.des span{display: block;width: 530px;overflow: hidden;text-overflow: ellipsis;white-space: nowrap;}
+.banner .ss{width: 89px;  height: 30px; margin: 0 auto;}
+.banner .d2{   height: 30px;  clear: both;  position: relative;  z-index: 100;top: 357px; left: 770px;   width: 100%;}
+.banner .d2 .ss ul{float: left;  width: 130px;    display: inline;}
+.banner .d2 li{width:10px;height:10px;overflow:hidden; background:#ffffff;border-radius:50%;float:left;margin:0 5px;display:inline;cursor: pointer;}
+.banner .d2 li.nuw,#banner_id2 .d2 li.nuw{width: 10px;height: 10px;background: #0068ac;border-radius: 50%;}
+
+.news .tab{width:470px;float: right }
+.tab .tabNav{width: 468px;border-right: 1px solid #d7d7d7;height: 36px;}
+.tabNav ul{width: 470px;overflow: hidden;height: 42px;}
+.tabNav ul li{display: block;float: left;width: 234px;background: url("../images/tab.png") no-repeat center;;height: 42px;
+    text-align: center;line-height: 36px;font-size: 16px;cursor: pointer}
+.tabNav ul li.cur,.tabNav ul li:hover{background: url("../images/tabHover.png") no-repeat center;color: #ffffff;}
+.tab .tabBox{overflow: hidden;  margin-top:10px;width: 450px;}
+.tabBox ul li{background: url("../images/icon.png") no-repeat left center;padding-left: 5px;}
+.tabBox ul li a{display: block;font-size: 14px;color: #000000;line-height: 32px;width: 450px;overflow: hidden;
+    text-overflow: ellipsis;white-space: nowrap;}
+.tabBox ul li:hover,.tabBox ul li.select{background: none;padding-left: 0;}
+.tabBox ul li:hover a,.tabBox ul li.select a{font-size: 20px;color: #0f89c3;font-weight: bold;line-height: 40px;}
+.tabBox a.more{color:#f81609;line-height: 25px;float: right; }
+.content .activity{width: 100%;overflow: hidden;margin: 20px 0;}
+.activity a{display: block;float: left;border: 1px solid #dddddd;border-radius: 10px;overflow: hidden;margin-right: 17px;}
+.activity a.aRight,.platform a.aRight{margin-right: 0;}
+.activity a img{width: 224px;height: 130px;border: 0;display: block;}
+.content .platform{width: 100%;overflow: hidden;margin-top: 30px;}
+.platform a{display: block;float: left;overflow: hidden;margin-right: 15px;}
+#wrapper {  width: 1200px;  height: 205px; margin: 0 auto; }
+#carousel {  width: 1120px;  position:relative;  margin-left: 50px;  }
+#carousel ul {  list-style: none;  display: block;  margin: 0;  padding: 0;  }
+#carousel li {  text-align: center;  display: block;  width: 80px;  height: 120px;  padding: 0;
+      float: left;  position: relative;  margin-left: 15px; margin-right: 29px; margin-top: 6px;}
+#carousel li.liRight{margin-right: 0;}
+#carousel li a{display: block;}
+#carousel li img {  width: 80px;  height: 82px;  margin-top: 14px;  border-radius: 10px;;  }
+#carousel li span {   display: block;  overflow: hidden;line-height: 25px;  font-size: 14px;  }
+.clearfix {  float: none;  clear: both;  }
+#carousel .prev, #carousel .next {  display: block;  overflow: hidden;  width: 25px;  height: 40px;  margin-left: 10px;  position: absolute;  top: 40px;  }
+#carousel .prev {  background: url("../images/pre.png") no-repeat center;  left: -57px;  }
+#carousel .prev:hover {  background: url("../images/pre_1.png") no-repeat center;  left: -57px;  }
+#carousel .next {  background: url("../images/next.png") no-repeat center;  right: -27px;  }
+#carousel .next:hover {  background: url("../images/next_1.png") no-repeat center;  right: -27px;  }
+
+.content .special{overflow: hidden;width: 100%;}
+.indexTitle,.linkTitle{ height:46px;  position:relative;border-bottom: 3px solid #d7d7d7;}
+.indexTitle p,.linkTitle p{ position:absolute; left:0; top:0;height:38px; line-height:41px;  font-size:18px; color: #333333;  }
+.indexTitle p.title{font-size: 20px;width: 90px;float: left;border-bottom: 3px solid #0068ac;color: #0068ac;font-weight: bold;text-align: center;height: 46px; }
+.linkTitle p.title{font-size: 20px;width: 90px;float: left;color: #0068ac;font-weight: bold;text-align: center;height: 46px; }
+.indexTitle .more,.linkTitle .more{ color:#999999; float:right; line-height:50px;font-size: 12px;}
+.special .splcon{width: 224px;overflow: hidden;margin: 20px 20px 20px 0;position: relative;}
+.splcon img{display: block;width: 224px;height: 108px;}
+.splcon h3{font-size: 14px;font-weight: bold;margin: 7px 0;}
+.splcon p{width: 224px;line-height: 20px;font-size: 14px;color: #666666;}
+.splcon a{display: block;position: absolute;right: 0;bottom: 0;color: #ff0000;font-size: 14px;}
+.special .splRight{margin: 20px 0 20px 0;}
+.content .link{width: 100%;overflow: hidden;margin-bottom:10px;margin-top: 10px;}
+.linkTitle .linkNav{overflow: hidden;margin-left: 110px;float: left;}
+.linkNav li{width: 109px;height: 43px;font-size: 16px;float: left;line-height: 41px;cursor: pointer;text-align: center;}
+.linkNav li.cur,.linkNav li:hover{border-top: 3px solid #0068ac;border-bottom: 3px solid #f2fbff;}
+.linkBox {width: 100%;overflow: hidden;margin-bottom: 20px;margin-top: 10px;}
+.linkBox ul li{display: block;width: 185px;float: left;overflow: hidden;text-overflow: ellipsis;white-space: nowrap;
+    margin-right: 10px;background: url("../images/icon.png") no-repeat  left center;padding-left: 3px;  }
+.linkBox ul li a{font-size: 14px;line-height: 30px;}
+.marker{display:none;width: 100%;height: 100%;position: fixed;background: rgba(0,0,0,0.3);top: 0;z-index: 1000;}
+
+
+
+
+
+
+
+
+
+
+

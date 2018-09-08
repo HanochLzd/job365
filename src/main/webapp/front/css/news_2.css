@@ -1,0 +1,64 @@
+@charset "utf-8";
+.wrapCon{width: 1200px;margin: 25px auto 30px;overflow: hidden;}
+.wrapCon .slideNav{width: 280px;height: 788px;background: #ffffff;}
+.indexTitle,.linkTitle{ height:40px;  position:relative;border-bottom: 3px solid #d7d7d7;width: 240px;margin-left: 20px;  margin-top: 15px; }
+.indexTitle p,.linkTitle p{ position:absolute; left:0; top:0;height:38px; line-height:41px;  font-size:20px; color: #333333;  }
+.indexTitle p.title{font-size: 20px;width: 101px;float: left;border-bottom: 3px solid #0068ac;color: #0068ac;font-weight: bold;text-align: center;height: 40px; }
+.linkTitle p.title{font-size: 20px;width: 90px;float: left;color: #0068ac;font-weight: bold;text-align: center;height: 46px; }
+.indexTitle .more,.linkTitle .more{ color:#999999; float:right; line-height:50px;font-size: 12px;}
+.slideNav ul{width: 240px;margin-left: 20px;margin-top: 20px;}
+.slideNav ul li{display: block;width: 240px;height: 45px;border: 1px solid #dddddd;background: #f8f8f8;margin-bottom: 10px;border-radius: 3px;}
+.slideNav ul li a{font-size: 16px;display: block;width: 100%;line-height: 45px;margin-left: 20px;}
+.slideNav ul li:hover,.slideNav ul li.cur{background:#036eb8 url("../images/icon_edu.png") no-repeat 210px center;border: 1px solid #036eb8;border-radius: 3px; }
+.slideNav ul li:hover a,.slideNav ul li.cur a{color: #ffffff;font-weight: bold;}
+.wrapCon .wrapImgs{overflow: hidden;background: #ffffff;width: 900px;}
+
+.wrapImgs .carousel {  width: 850px;  height: 470px;  margin:20px auto;position: relative;  }
+.control {  width: 850px;  height: 473px;  background: #282828;  display: block;border-radius: 5px;
+    position: absolute;  top: 0;  left: 0;  overflow: hidden;  }
+.change li {  width: 850px;  overflow: hidden;  text-align: center  }
+.change li .imgWrap {  display: table-cell;  width: 850px;  height: 473px;  vertical-align: middle;  cursor: pointer;  *font-size: 500px;  }
+.change li img {  display: block;border-radius: 5px;
+    width: 850px!important;  height: 473px;  vertical-align: middle;  overflow: hidden  }
+.change li .textDesc {  width: 100%;  height: 35px;  position: absolute;  left: 0;  bottom: -48px;  text-align: left;  overflow: hidden;  }
+.change li .opacity {  width: 100%;  height: 40px;  position: absolute;  left: 0;  bottom: -48px;
+    background: #000;  filter: alpha(opacity=50);  opacity: 0.5;  }
+.change li .title {  padding: 10px 15px 0;  color: #e6e6e6;  font-size: 14px;  line-height: 22px;  }
+.change li .title a {  color: #e6e6e6;  }
+.ssprev, .ssnext {  width: 49px;  height: 49px;  position: absolute;
+    bottom: 300px;  color: #FFF;  font-size: 14px;  z-index: 9;
+    font-weight: bold;  cursor: pointer;  outline: none  }
+.ssprev span, .ssnext span {  display: none;  }
+.pageClass {  text-align: center;  z-index: 9;  position: absolute;  top: 50px;  padding-top: 10px;  }
+.pageClass a {  display: inline-block;  width: 10px;  height: 10px;  margin: 0 3px;
+    overflow: hidden;  border: 1px solid #bebebe;  background: #bebebe;  border-radius: 5px;  outline: none  }
+.pageClass a span {  display: none  }
+.pageClass a:hover, .pageClass a.cur {  border: 1px solid #be230a;  background: #be230a  }
+.thumbWrap {  width: 360px;  height: 120px;  position: absolute;
+    right: 20px;  bottom: 0;  overflow: hidden;  }
+.thumbWrap .thumbCont {  width: 290px;  height: 145px;  margin: 45px auto 0;  overflow: hidden;
+    position: relative;  }
+.thumbWrap ul li {
+    overflow: hidden;  padding-bottom: 13px;  padding-left: 10px;
+    text-align: center;  width: 87px;  height: 62px;  float: left;  }
+.thumbWrap ul li div {
+    display: table-cell;  width: 87px;  height: 62px;
+    vertical-align: middle;  cursor: pointer;  }
+.thumbWrap ul li img {width: 81px;height: 56px;  overflow: hidden  }  .thumbWrap ul li.cur img {border:3px solid #ffffff;}
+.thumbPrev, .thumbNext {  width: 100px;  height: 24px;
+    text-align: center;  position: absolute;  color: #000;  z-index: 9;  outline: none  }
+.thumbPrev span, .thumbNext span {  display: none;  }
+.thumbPrev {  width: 30px;  height: 45px;
+    left: 10px;  top: 53px;  background: url(../images/imgPre.png) no-repeat;  }
+.thumbNext {  width: 30px;  height: 45px;  right: 0px;  top: 53px;  background: url(../images/imgNext.png) no-repeat;  }
+.wrapImgs .imgList{overflow: hidden;margin-left: 25px;}
+.imgList .imgDetail{margin-right: 5px;margin-bottom: 20px;overflow: hidden}
+.imgDetail img{display: block;width: 283px;height: 180px;border-radius: 3px 3px 0 0;}
+.imgDetail .intro{background: #ffffff;border: 1px solid #dddddd;border-radius: 0 0 3px 3px;}
+.intro h4{font-size: 14px;font-weight: normal;line-height: 30px;margin-left: 10px;}
+.intro h4 a:hover{color: #0068ac;}
+.intro p{color: #666666;width: 250px;overflow: hidden;text-overflow: ellipsis;white-space: nowrap;margin-left: 10px;margin-bottom: 10px;}
+.pages{overflow: hidden;text-align: center;width: 860px;margin: 40px auto;}
+.pages ul{overflow: hidden;margin-left: 250px;}
+.pages ul li{display: block;float: left;padding: 5px 10px;margin-left: 10px;border: 1px solid #dddddd;cursor: pointer;}
+.pages ul li:hover,.pages ul li.cur{background:#036eb8;border: 1px solid #036eb8;color: #ffffff;}

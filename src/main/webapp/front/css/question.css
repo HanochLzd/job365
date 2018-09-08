@@ -1,0 +1,45 @@
+@charset "utf-8";
+/*试题*/
+.slideLeft{width: 160px;overflow: hidden;background: url("../images/Test_left_bj.png") repeat-y left;  margin-left: 20px; }
+.Test .Test_left {
+    float: left;  width: 153px;  background: url(../images/Test_left_bj.png) repeat-y left;  border-right: solid #c6c6c6 1px; }
+.slideLeft dl {  padding-top: 5px;  }
+.slideLeft dt {  height: 24px;  line-height: 24px;  font-size: 14px;  color: #333;  font-weight: bold;  margin-bottom: 2px;  }
+.slideLeft dt b {  background: url(../images/curse_icons.png) no-repeat center;
+    width: 17px;  height: 16px;  display: block;  overflow: hidden;  float: left;  margin: 4px 8px 0 0;  }
+.slideLeft dd {  padding-left: 25px;  line-height: 24px;  }
+.slideLeft dd a:hover,.slideLeft dd a.cur {color: #036eb8;}
+.slideCen{width: 795px;overflow: hidden;border-left: 1px solid #d0cdcd;}
+.examQue{width: 775px;overflow: hidden;margin-left: 20px;}
+.examQue .wrapQue{  border: 1px solid #dddddd;overflow: hidden;padding-bottom: 15px;background: #f7f7f7;margin-bottom: 20px;  }
+.wrapQue .title{height: 30px;background: #e3e3e3;}
+.title h3{line-height: 30px;width: 640px;overflow: hidden;text-overflow: ellipsis;white-space: nowrap;font-size: 14px;
+margin-left: 10px;float: left;}
+.title h3 i{font-style: normal;padding-left: 10px;}
+.title span{display: block;float: right;height: 30px;color: #ffffff;background: #036eb8;width: 76px;
+    text-align: center;line-height: 30px;font-size: 14px;cursor: pointer;}
+.wrapQue p{margin-left: 10px;line-height: 25px;font-size: 14px;}
+.wrapQue p.qusTitle{line-height: 30px;margin-top: 5px;}
+.wrapQue p input{width: 50px;border: none;border-bottom: 1px solid #333333;background: none;}
+
+/*已选试题*/
+.selQue {width: 186px;overflow: hidden;margin-right: 20px;}
+.selQue .selTit{overflow: hidden}
+.sleTit h3{  font-size: 14px;line-height: 25px;float: left;width: 100px; display: block;font-weight: normal;}
+.sleTit span{display: block;float: right;font-size: 14px;color: #036eb8;cursor: pointer;line-height: 25px;}
+.selQue table{width: 186px;  border-width: 1px;  border-color: #666666;  border-collapse: collapse;  }
+.selQue table tr td{border: 1px solid #dddddd;height: 28px;line-height: 28px;/*padding: 0 10px 0 5px;*/}
+.selQue table tr td img{display: block;  margin: 3px 0 0 3px;}
+.selQue table tr td:nth-child(1){width: 85px;padding-left: 5px;}
+.selQue table tr td:nth-child(2){width: 20px;text-align: center;}
+.selQue table tr td:nth-child(3){width: 70px;}
+.selQue table tr td:nth-child(4){width: 25px;}
+.selQue input[type=button]{width: 184px;height: 30px;background: #999999;border-radius: 3px;margin-top: 10px;border: none;color: #ffffff;cursor: pointer;}
+
+/*进度条*/
+.progress-out {  position: relative;  background-color: #fff;  }
+.progress-in {  position: absolute;  height: 100%;  width: 0%;  border: none;  background-color: #7fb4d9;
+    text-align: center;  color: #666666;  z-index: 1;  }
+.direction-left{  left:0;  }
+.direction-right{  right:0;  }
+.percent-show {  font-size: 12px !important;  position: absolute;  width: 100%;  height: 100%;  top: 0;  left: 0;  color: #666666;  text-align: center;  z-index: 2;  }

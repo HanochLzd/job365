@@ -1,0 +1,374 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<!-- TemplateBeginEditable name="doctitle" -->
+<title>无标题文档</title>
+<!-- TemplateEndEditable -->
+<!-- TemplateBeginEditable name="head" -->
+<!-- TemplateEndEditable -->
+<style>
+@charset "utf-8";
+
+@media screen and (max-width:800px) {
+.content{ width:100%;margin:0 auto; position:relative;}
+.content1{margin-top:0em;}
+.content .hd-list{top:0em; margin-left:2%;margin-right:2%}
+.content .hd-list li{ border-bottom:1px solid #ed6d51; padding:0px 0px; background:#faf5ef; float:left; width:100%; height:90px; overflow:hidden; position:relative;}
+.content .hd-list li a h3{font-size:12px;color:#70657b; width:90%;line-height:12px; padding:42px 0 0 20px; position:absolute;top:4%;left:0%;font-family:宋体;font-bold:normal;text-shadow:0 0 0px #70657b}
+.content .hd-list li a:hover h3 {color:#ED6D51;}
+.content .hd-list li a.zc{background:#826694; position:absolute;left:0%; bottom:65%;}
+.content .hd-list li a img{display:none}
+.content .main{ padding-top:11px; padding-bottom:85px;}
+}
+.content h2{ font-size:22px; color:#542b74; padding: 38px 0 12px 0; line-height:28px;}
+.content h2.y{ color:#ed6d51;}
+@media screen and (min-width:1200px) {
+.content .mainleft .left{ width:380px; margin-right:70px;}
+}
+@media screen and (max-width:1200px) {
+.content .mainleft .left{ width:380px; margin-right:70px;margin-left:20px}
+}
+.content .mainleft li{ border-bottom:1px solid #dfdfdf;}
+.content .mainleft li a{ line-height:40px; display:block;overflow: hidden;text-overflow: ellipsis;white-space: nowrap; font-size:14px;}
+.content .mainleft li a span{ color:#9a999a; padding-right:22px;font-size:12px;}
+@media screen and (min-width:640px) and (max-width:800px) {
+.content .main{ padding-top:20px; padding-bottom:20px;margin-left:4%}
+.content .mainleft li{ border-bottom:1px solid #dfdfdf;}
+.content .mainleft li a{ line-height:40px; display:block;overflow: hidden;text-overflow: ellipsis;white-space: nowrap; font-size:14px;}
+.content .mainleft li a span{ color:#9a999a; padding-right:22px;font-size:12px;}
+.content .mainleft .left{ width:95%; margin-right:5%;}
+}
+@media screen  and (min-width:500px) and (max-width:640px) {
+.content .main{ padding-top:20px; padding-bottom:20px;}
+.content .mainleft li{ border-bottom:1px solid #dfdfdf;}
+.content .mainleft li a{ line-height:40px; display:block;overflow: hidden;text-overflow: ellipsis;white-space: nowrap; font-size:14px;}
+.content .mainleft li a span{ color:#9a999a;font-size:12px;}
+.content .mainleft .left{ width:95%; }
+}
+@media screen  and (min-width:400px) and (max-width:500px) {
+.content .main{ padding-top:20px; padding-bottom:20px;}
+.content .mainleft li{ border-bottom:1px solid #dfdfdf;}
+.content .mainleft li a{ line-height:40px; display:block;overflow: hidden;text-overflow: ellipsis;white-space: nowrap; font-size:14px;}
+.content .mainleft li a span{ color:#9a999a;font-size:12px;}
+.content .mainleft .left{ width:75%; }
+}
+@media screen  and (min-width:300px) and (max-width:400px) {
+.content .main{ padding-top:20px; padding-bottom:20px;}
+.content .mainleft li{ border-bottom:1px solid #dfdfdf;}
+.content .mainleft li a{ line-height:40px; display:block;overflow: hidden;text-overflow: ellipsis;white-space: nowrap; font-size:14px;}
+.content .mainleft li a span{ color:#9a999a;font-size:12px;}
+.content .mainleft .left{ width:60%; }
+}
+@media screen  and (max-width:300px) {
+.content .main{ padding-top:20px; padding-bottom:20px;}
+.content .mainleft li{ border-bottom:1px solid #dfdfdf;}
+.content .mainleft li a{ line-height:40px; display:block;overflow: hidden;text-overflow: ellipsis;white-space: nowrap; font-size:14px;}
+.content .mainleft li a span{ color:#9a999a;font-size:12px;}
+.content .mainleft .left{ width:51%; }
+}
+@media screen and (min-width:1200px) {
+.content .mainright{ background:url(../images/index-4.jpg) no-repeat top; width:300px; text-align:center; overflow:hidden;}
+.content .mainright a.wx{ margin:64px 0 66px 0; padding:0 39px; height:40px;line-height:40px; border:2px solid #fff; border-radius:24px; color:#fff; font-size:16px;width:auto}
+.content .mainright a.wx:hover{ background:#fff; color:#ed6d51;}
+.content .mainright .jz{ position:relative; width:300px; height:269px; overflow:hidden}
+.content .mainright .jz a.sm{ overflow:hidden;position:relative; display:block;*position:static;}
+.content .mainright .jz a.sm span{color:#fff; position:absolute; bottom:30px; left:40px;text-align:left; z-index:30; width:230px;}
+.content .mainright .jz .c-p{ position:absolute; bottom:0; left:0;}
+.content .mainright .jz a.icon{ display:block; width:31px; height:45px;line-height:45px;filter:alpha(opacity=60);background:#fff; background:rgba(255,255,255,0.6); color:#3b125c;*padding-top:15px;*height:30px;}
+.content .mainright .jz a.ileft{position:absolute;top:112px; left:0; border-top-right-radius:23px;border-bottom-right-radius:23px; padding-right:5px; z-index:20;}
+.content .mainright .jz a.iright{position:absolute;top:112px; right:0; border-top-left-radius:23px;border-bottom-left-radius:23px; padding-left:5px; z-index:20;}
+.content .mainright .jz a.ileft i.icon-left-open,.content .mainright .jz a.iright i.icon-right-open{ font-size:16px;}
+.content .mainright .jz a.zc{ position:absolute; bottom:78px; left:34px; filter:alpha(opacity=60);background:#fff;background:rgba(255,255,255,0.6); color:#49286d;}
+.content .mainright .jz a.icon:hover,.content .mainright .jz a.zc:hover{filter:alpha(opacity=70); background:rgba(255,255,255,0.9);}
+}
+@media screen and (min-width:800px) {
+#timeLineArea{display:none}
+}
+@media screen and (max-width:800px) {
+#timeLineArea{display:block}
+}
+@media screen and (max-width:1200px) {
+.content .mainright{ background:url(../images/index-4.jpg) top; width:100%; text-align:center; overflow:hidden;}
+.content .mainright a.wx{ margin:64px 0 66px 0; padding:0 39px; height:40px;line-height:40px; border:2px solid #fff; border-radius:24px; color:#fff; font-size:16px;width:auto}
+.content .mainright a.wx:hover{ background:#fff; color:#ed6d51;}
+.content .mainright .jz{display:none}
+.timelinecontrol{display:none}
+#timeLineArea{display:block}
+}
+.njimg{width:100%; margin:0 auto; border-bottom:5px solid #4d2c72; overflow:hidden;}
+.njimg .timelinecontainer {background: rgba(255,255,255,0.6); height: 370px;margin-bottom: 40px;filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#7f000000,endColorstr=#7f000000); }
+.njimg .timeline {background:url(../images/timelinebg.jpg) no-repeat center center;height:500px;padding-top: 50px;}
+.njimg .timeline .timelinecontrol {width:90%;margin:auto;height:30px;padding:20px 30px;border-radius:6px;filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#B2000000,endColorstr=#B2000000);position: relative;}
+.njimg .timeline .timelinecontrol:nth-of-type(n){filter:none;background:rgba(255,255,255,0.6);}
+.njimg .timeline .timelinecontrol  a {display:block;height:10px;}
+.njimg .timeline .timelinecontrol  a:hover {background: #a164c7 !important}
+.njimg .timeline .timelinecontrol table {color: #4d2c72}
+.njimg .timeline .timelinecontrol .pointer {position: absolute; left: 40px ; top: 5px;border:1px solid #4d2c72; border-top-width: 6px; border-bottom-width: 6px;width: 16px;height: 48px;cursor: pointer;background: rgba(255,255,255,0.2);filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#33ffffff,endColorstr=#33ffffff);z-index: 1}
+.njimg .timeline .timelinecontrol .pointer:hover {background: none;filter: none;}
+.njimg .timelinecontainer li {float: left;height:370px;overflow: hidden;}
+.njimg .timelinecontainer li.years {width: 250px;margin: 0 10px;}
+.njimg .timelinecontainer li.years .ucontent {padding:40px 35px 0 35px; height:100%;}
+.njimg .timelinecontainer li.years .ucontent h2 {font-size: 48px;color: #fff;font-weight: bold;line-height: 1em;}
+.njimg .timelinecontainer li.years .ucontent p {color: #fff;padding-top: 20px;height: 215px;opacity: 0.8;filter: alpha(opacity=80)}
+.njimg .timelinecontainer li.years .ucontent a {color:#a0f7ff}
+.njimg .timelinecontainer li.items {position: relative;width: 190px;}
+.njimg .timelinecontainer li.items a h3 {line-height: 40px; font-style:italic;}
+.njimg .timelinecontainer li.items a {display: block;width: 170px;position: absolute;bottom: 0;left: 10px; border-top: 1px solid #595959;color: #4d2c72}
+.njimg .timelinecontainer li.items a img {width: 100%;margin-bottom: 10px;}
+.njimg .timelinecontainer li.items a p{color: #454545;padding-bottom: 15px}
+
+.cout-bottom{width:100%; margin:0 auto; background:#F3F6F9; padding-bottom:155px;}
+@media screen and (min-width:1542px) {
+.cout-bottom .layout{ width:100%; margin:0 auto;}
+}
+@media screen and (min-width:1342px) and (max-width:1542px) {
+.cout-bottom .layout{ width:100%; margin-left:50px;}
+}
+@media screen and (min-width:1242px) and (max-width:1342px) {
+.cout-bottom .layout{ width:100%; margin:0 auto;}
+}
+@media screen and (min-width:1042px) and (max-width:1242px) {
+.cout-bottom .layout{ width:100%; margin-left:50px;}
+}
+@media screen and (min-width:942px) and (max-width:1042px) {
+.cout-bottom .layout{ width:100%; margin:0 auto;}
+}
+@media screen and (min-width:782px) and (max-width:942px) {
+.cout-bottom .layout{ width:100%; margin-left:50px;}
+}
+@media screen and (min-width:682px) and (max-width:782px) {
+.cout-bottom .layout{ width:100%;margin:0 auto;}
+}
+@media screen and (min-width:500px) and (max-width:682px) {
+.cout-bottom .layout{ width:100%; margin-left:50px;}
+}
+@media screen and (max-width:500px) {
+.cout-bottom .layout{ width:100%;margin:0 auto;}
+}
+@media screen and (min-width:1200px) {
+.cout-bottom .layout .nj{ text-align:center; background:url(../images/hu-2.jpg) no-repeat; position:relative;color:#8C849E;margin-left:10%;}
+}
+@media screen and (max-width:1200px) {
+.cout-bottom .layout .nj{display:none}	
+
+}
+.cout-bottom .layout .nj .my{position:absolute; top:13px; left:590px; font-size:16px; color:#fff; margin-left:-30px;}
+.cout-bottom .layout .nj h2{ font-size:32px; padding-top:120px; color:#664101; line-height:36px; padding-bottom:17px;}
+.cout-bottom .layout .list{ padding-top:42px;}
+.cout-bottom .layout .list li{ float:left; width:300px; height:300px; overflow:hidden; background:#fff;}
+.cout-bottom .layout .list li.wlist{ padding:37px 40px 49px 40px; width:220px; height:214px; color:#818181;}
+.cout-bottom .layout .list li.wlist h3 a{ color:#593376; font-size:18px; line-height:24px; padding:16px 0; display:block;}
+.cout-bottom .layout .list li.wlist a.wx{ border-color:#ed6d51; color:#ed6d51; padding:0 13px; margin:0;width:auto}
+.cout-bottom .layout .list li.wlist a.wx:hover{ background:#ed6d51; color:#fff;}
+.cout-bottom .layout .list li.wlist h3 a:hover{ color:#ed6d51;}
+.cout-bottom .layout .list li.bg1{ background: url(../images/gs-bg_06.jpg) no-repeat;}
+.cout-bottom .layout .list li.bg2{ background:url(../images/gs-bg_08.jpg) no-repeat;}
+.cout-bottom .layout .list li.arrow{ position:relative;}
+.cout-bottom .layout .list li.ar1:hover a .play{filter:alpha(opacity=70);background:rgba(77,44,114,0.7);}
+
+
+html,body,div,span,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,figcaption,code,del,dfn,em,image,q,dl,dt,dd,ol,ul,li,fieldset,form,legend,table,tf,tr,th {
+	border: 0px;
+	padding: 0px; 
+	font-size: 100%; 	
+	-webkit-text-size-adjust:none;
+	margin: 0px; 
+	font-family: inherit;
+}
+
+
+body {
+	background-color: #FFFFFF;
+	color: #a0a0a0;
+	line-height: 18px;
+	font-size: 12px;
+	font-family:"\5FAE\8F6F\96C5\9ED1",Arial,sans-serif;
+	margin: 0px;
+	font-weight:normal;
+}
+
+
+input,textarea,select
+{
+	font-family:"\5FAE\8F6F\96C5\9ED1",Arial,sans-serif;
+	font-size:12px;
+	outline:none;
+	background:#fff;
+}
+
+img {
+	border: 0px;
+	vertical-align:bottom;
+}
+
+a, a:link {
+	text-decoration: none;
+	color:#696171;
+	font-family:"\5FAE\8F6F\96C5\9ED1";
+}
+
+a:hover
+{
+	text-decoration:none;
+	color:#ed6d51;	
+}
+
+ul, li {
+	list-style-type:none;
+}
+.left {
+	float: left;
+}
+.right {
+	float: right;
+}
+
+.clearfix:after {
+	display:block;
+	content:'.';
+	clear:both;
+	height:0px;
+	visibility: hidden;
+}
+
+.yahei{
+	font-family:"\5FAE\8F6F\96C5\9ED1";
+	font-weight:normal;
+}
+
+h1,h2,h3,h4
+{
+	font-family:"\5FAE\8F6F\96C5\9ED1";
+	font-weight:normal;
+}
+
+.relative
+{
+	position:relative;
+}
+
+.clearfix {
+*display:inline-block;
+*zoom:1;
+*vertical-align:top;
+}
+
+.clear
+{
+	clear:both;
+	overflow:hidden;
+	height:0;	
+}
+lable{ display:block;}
+p{ color:#646464;}
+/*wangyan*/
+@media screen and (min-width:1200px) {
+header,nav,footer{ width:100%; margin:0 auto;min-width:1200px;}
+}
+@media screen and (max-width:1200px) {
+header,nav,footer{ width:100%; margin:0 auto;}
+}
+header:nth-of-type(1) { width:100%;max-width:100%;}
+header{max-width:1920px;}
+.headlogo{ width:100%; margin:0 auto;background:url(../images/head-bg.png) repeat-x; height:15px; position:relative;z-index:1}
+.headlogo .logo{ background:url(../images/hu-1.png) no-repeat; position:absolute; left:50%; top:0; width:750px; height:124px; margin-left:-375px; z-index:1;}
+.headlogo .logo a{ position:absolute; left:50%; top:20px;margin-left:-50px; display:block;}
+@media screen and (min-width:1200px) {
+header .menu,nav .nav-menu{ width:1168px;margin:0 auto; padding:0 20px 0 12px; z-index:100; position:relative;}
+}
+@media screen and (min-width:800px) and (max-width:1200px) {
+header .menu,nav .nav-menu{ width:95%;margin:0 auto; padding:0 20px 0 12px; z-index:100; position:relative;}	
+}
+header .menu {z-index:101;}
+.yhm input{width:90px;height:28px; padding:0 20px 0 12px; line-height:28px; color:#555; border:0;border:1px solid #dfdfdf; border-top-left-radius:15px;border-bottom-left-radius:15px;border-right:0;}
+.yhm2 input{ border-top-left-radius:0;border-bottom-left-radius:0;border-top-right-radius:15px;border-bottom-right-radius:15px;border-right:1px solid #dfdfdf;}
+.yhm2{position:relative;}
+.yhm2 a.icon{position:absolute; right:7px; top:7px;font-size:14px;}
+a.icon i.icon-right-big, a.icon i.icon-search{ color:#723d95; }
+a.zc{ background:#ed6d51; border-radius:15px; display:inline-block; zoom:1;color:#fff; padding:0 13px; height:30px;line-height:30px; margin-left:6px;}
+a.zc:hover{background:#723d95; color:#fff;}
+header .menu .right .yhm2 input{border-top-left-radius:15px;border-bottom-left-radius:15px; width:115px;}
+a.wx{ height:28px;line-height:28px; border-radius:15px; display:inline-block;text-align:center;margin-left:10px; border:1px solid #dfdfdf;font-size:12px;width:28px;color:#723D95}
+
+
+
+
+
+
+
+.select-wrap .selectric-list{width:133px; line-height:30px; height:60px;background:#fff; color:#000;}
+.arrow i{position:absolute;top:50%;left:0;border-bottom:16px solid transparent;border-top:16px solid transparent;border-left:17px solid #fff; margin-top:-24px; height:0;width:0;}
+.ar1 i{border-bottom:16px solid transparent;border-top:16px solid transparent;border-right:17px solid #fff; border-left:0; left:auto;right:0;}
+.cout-bottom .layout .list li.arrow .playbottom{filter:alpha(opacity=60); background:#fff;background:rgba(255,255,255,0.6);display:block; position:absolute;top:125px;right:127px;width:66px;height:66px;border-radius:34px;}
+a .play{ width:58px; height:58px; background:#4d2c72;filter:alpha(opacity=60);background:rgba(77,44,114,0.6); display:block; position:absolute;top:129px;right:131px; border-radius:32px; z-index:10;}
+a .play i{ right:19px;border-left:17px solid #fff; border-right:0;border-top-width:13px;border-bottom-width:13px; z-index:20;top:16px; margin:0;}
+a.more{color: #a7b4b4;float: right;font-size: 12px;}
+h3.hot a{ color:#575757; font-size:16px; display:block; line-height:50px; background:#f1f1f1; border-bottom:2px solid #ed6d51;}
+h3.hot a.icon i.icon-chart-bar{ color:#ed6d51; font-size:16px; margin:0 16px 0 27px;}
+
+
+
+
+/*wangyan*/
+
+/*wangyan*/
+</style>
+</head>
+
+<body>
+<div class="cout-bottom "style="margin-top:100px;">
+	<div class="layout">
+    	<div class="nj" style="width:1200px;margin-left:auto;margin-right:auto">
+        	<a href="javascript:void(0);" onclick="toLmURL(4000361,'1')" class="my">精彩中工</a>
+            <a href="javascript:void(0);" onclick="toLmURL(4000364)" id="bnqh" ><h2>校友风采</h2></a>
+            <a href="javascript:void(0);" onclick="toLmURL(4000364)" id="bnqh" ><span>百年清华，人文日新。百年清华栏目分为清华人物、清华故事、青春风采、校友文苑、校友讲坛、校友视界<br>等六个版块，为您讲述清华园和清华人的故事。</span></a>
+        </div>
+        <ul class="list clearfix" style="margin-left:auto;margin-right:auto; width:1200px;">
+        	<li class="bg1 wlist">
+            	<a href="javascript:void(0);" onclick="toLmURL(4000359)" class="wx">人物</a>
+                <h3><a href="javascript:void(0);" onclick="toXxURL(11200657,4000359)">人物:人物人物人物人物	　</a></h3>
+                <span><a href="javascript:void(0);" onclick="toXxURL(11200657,4000359)">事迹事迹事迹事迹事迹事迹事迹事迹.</a></span>
+            </li>
+            <li class="arrow"><a href="javascript:void(0);" onclick="toXxURL(11200657,4000359)"><img src="../images/3.jpg"></a> <i></i></li>
+            <li class="bg2 wlist">
+            	<a href="javascript:void(0);" onclick="toLmURL(4000382)" class="wx">人物</a>
+                <h3><a href="javascript:void(0);" onclick="toXxURL(10098569,4000382)">姓名：事迹事迹事迹事迹事迹事迹事迹事迹</a></h3>
+                <span><a href="javascript:void(0);" onclick="toXxURL(10098569,4000382)">事迹事迹事迹事迹事迹事迹事迹事迹不久日本投降，归国事迹事迹事迹事迹事迹事迹事迹事迹</a></span>
+            </li>
+            <li class="arrow"><a href="javascript:void(0);" onclick="toXxURL(10098569,4000382)"><img src="../images/1.jpg"></a> <i></i></li>
+            
+            <li class="arrow ar1"><a href="javascript:void(0);" onclick="toXxURL(11201789,4000480)"><img src="../images/2.jpg"></a> <i></i></li>
+            <li class="wlist">
+            	<a href="javascript:void(0);" onclick="toLmURL(4000480)" class="wx">人物</a>
+                <h3><a href="javascript:void(0);" onclick="toXxURL(11201789,4000480)">姓名：：事迹事迹事迹事迹事迹事迹事迹事迹生</a></h3>
+                <span><a href="javascript:void(0);" onclick="toXxURL(11201789,4000480)">郝景芳，她同时具有两个身份，入围雨果奖的科幻作家，中国发展研究基金会的项目主任。...</a></span>
+            </li>
+            
+            <li class="arrow ar1"><a href="javascript:void(0);" onclick="toXxURL(10096191,4000380)"><img src="../images/2.jpg"></a> <i></i></li>
+            <li class="wlist">
+            	<a href="javascript:void(0);" onclick="toLmURL(4000380)" class="wx">校友文苑</a>
+                <h3><a href="javascript:void(0);" onclick="toXxURL(10096191,4000380)">蓬铁权：华盛顿赏樱（摄影）</a></h3>
+                <span><a href="javascript:void(0);" onclick="toXxURL(10096191,4000380)">春回大地，一片生机，樱花盛开，人山人海。...</a></span>
+            </li>
+            
+             <li class="wlist">
+            	<a href="javascript:void(0);" onclick="toLmURL(4000419)" class="wx">校友讲坛</a>
+                <h3><a href="javascript:void(0);" onclick="toXxURL(11176171,4000419)">颜宁：我们这一代的责任</a></h3>
+                <span><a href="javascript:void(0);" onclick="toXxURL(11176171,4000419)">让中国的科研实力配得上她的经济体量，让中国的科研成果产生世界影响，让中国人的工作在世...</a></span>
+            </li>
+            <li class="arrow"><a href="javascript:void(0);" onclick="toXxURL(11176171,4000419)"><img src="../images/2.jpg"></a> <i></i></li>
+            
+            <li class="wlist">
+            	<a href="javascript:void(0);" onclick="toLmURL(4000383)" class="wx">校友视界</a>
+                <h3><a href="javascript:void(0);" onclick="toXxURL(10095556,4000383)">他建立了服务创业校友的“出壳”平台——访谈出壳科技董事长、经管学院2003级校友御智斐</a></h3>
+                <span><a href="javascript:void(0);" onclick="toXxURL(10095556,4000383)">御智斐，1985年出生于河南平顶山，自幼练习竞走，2000年入选中国解放军八一体工大队，2001年进入清华附中马约翰班，20...</a></span>
+            </li>
+            <li class="arrow"><a href="javascript:void(0);" onclick="toXxURL(10095556,4000383)"><img src="../images/2.jpg"><div><span class="play"> <i style="margin-left:22px"></i></span> <span class="playbottom"></span></div></a> <i></i> </li>
+        </ul>
+	
+    </div>
+</div>
+
+</body>
+</html>

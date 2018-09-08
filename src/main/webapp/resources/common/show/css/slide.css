@@ -1,0 +1,246 @@
+*{padding:0;margin:0;list-style:none;border:0;}
+/* 焦点图 */
+#show {
+	position: relative;
+	height: 320px;
+	width: 1200px;
+	margin: 0 auto;
+}
+#show a {
+	float: left;
+	display: inline;
+}
+#show .img {
+	position: absolute;
+	width: 1200px;
+	height: 320px;
+	overflow: hidden
+}
+#show .img SPAN {
+	position: absolute;
+	width: 19999px;
+	display: block
+}
+#show .btns {
+	z-index: 10;
+	position: absolute;
+	width: 1200px
+}
+#show .btns B {
+	position: absolute;
+	width: 100px;
+	display: block;
+	height: 14px;
+	overflow: hidden;
+	top: 295px;
+	left: 50%
+}
+#show .btns B I {
+	width: 10px;
+	background: #fff;
+	float: left;
+	height: 10px;
+	font-size: 0px;
+	overflow: hidden;
+	cursor: pointer;
+	margin-right: 6px;
+	border: #ccc 2px solid;
+	-webkit-border-radius: 7px;
+	-moz-border-radius: 7px;
+	border-radius: 7px
+}
+#show .btns B I:hover {
+	background: #a7a7a6
+}
+#show .btns B I.on {
+	background: #726c6a;
+	cursor: default
+}
+#show .btns B I.on:hover {
+	background: #726c6a;
+	cursor: default
+}
+#show .btns S {
+	position: absolute;
+	WIDTH: 60px;
+	display: none;
+	height: 80px;
+	overflow: hidden;
+	top: 130px;
+	cursor: pointer
+}
+#show .btns S I {
+	position: absolute;
+	width: 60px;
+	background: url(../images/btn_show.png);
+	height: 160px;
+	_filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true, sizingMethod=scale, src="../images/btn_show.png");
+	_background: none;
+}
+#show .btns S.prev {
+	left: 0px
+}
+#show .btns S.prev I {
+	top: -80px
+}
+#show .btns S.next {
+	right: 0px
+}
+.show-hover#show .btns S {
+	display: block
+}
+.masks {
+	opacity: 0.5;
+	filter: alpha(opacity=50);
+	-moz-opacity: 0.5;
+	-khtml-opacity: 0.5;
+	height: 320px;
+	position: absolute;
+	background: #000;
+	overflow: hidden
+}
+
+#slide_l {
+	width: 399px;
+	margin: 10px auto 0;
+	text-align: left; 
+
+}
+/*  头部样式 */	
+#slide_lTitle {
+	height: 62px;
+	overflow: hidden;  /* 这个一定要加上，内容超出的部分要隐藏，免得撑高头部 */
+	font-size: 26px;
+	line-height: 62px;
+	padding-left: 30px;
+	background-image: -moz-linear-gradient(top, #f05e6f, #c9394a); /* Firefox */
+	background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #f05e6f), color-stop(1, #c9394a)); /* Saf4+, Chrome */
+filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#8fa1ff', endColorstr='#f05e6f', GradientType='0'); /* IE*/
+	border: 1px solid ##f05e6f;
+	-moz-border-radius: 8px 8px 0 0;      /* Gecko browsers */
+	-webkit-border-radius: 8px 8px 0 0;   /* Webkit browsers */
+	border-radius: 8px 8px 0 0;
+	color: #fff;
+	position: relative;
+}
+#slide_lTitle a {
+	position: absolute;
+	right: 10px;
+	bottom: 10px;
+	display: inline;
+	color: #fff;
+	font-size: 12px;
+	line-height: 24px;
+}
+/*  底部样式 */
+#slide_lBot {
+	width: 399px;
+	height: 10px;
+	overflow: hidden;     /* 这个一定要加上，内容超出的部分要隐藏，免得撑高底部结构 */
+}
+/*  中间样式 */
+#slide_lBox {
+	height: 145px;
+	width: 377px;
+	
+	
+	overflow: hidden;    /*  这个一定要加，超出的内容部分要隐藏，免得撑高中间部分 */
+}
+#slide_l ul li {
+	height: 24px;
+	
+}
+#slide_l ul li a {
+	width:242px;
+	float: left;
+	display: block;
+	overflow: hidden;
+	text-indent: 15px;
+	height: 30px;
+	line-height:25px;
+	padding-left:20px;
+	background:url(../images/recruit_list.png) no-repeat 10px 1px;
+	overflow:hidden;
+text-overflow: ellipsis;
+white-space:nowrap;
+}
+
+#slide_l ul li span {
+	float: right;
+	color: #999;
+
+}
+
+
+#slide_l {
+	width: 399px;
+	margin: 10px auto 0;
+	text-align: left; 
+
+}
+/*  头部样式 */	
+#slide_l1Title {
+	height: 62px;
+	overflow: hidden;  /* 这个一定要加上，内容超出的部分要隐藏，免得撑高头部 */
+	font-size: 26px;
+	line-height: 62px;
+	padding-left: 30px;
+	background-image: -moz-linear-gradient(top, #f05e6f, #c9394a); /* Firefox */
+	background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #f05e6f), color-stop(1, #c9394a)); /* Saf4+, Chrome */
+filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#8fa1ff', endColorstr='#f05e6f', GradientType='0'); /* IE*/
+	border: 1px solid ##f05e6f;
+	-moz-border-radius: 8px 8px 0 0;      /* Gecko browsers */
+	-webkit-border-radius: 8px 8px 0 0;   /* Webkit browsers */
+	border-radius: 8px 8px 0 0;
+	color: #fff;
+	position: relative;
+}
+#slide_l1Title a {
+	position: absolute;
+	right: 10px;
+	bottom: 10px;
+	display: inline;
+	color: #fff;
+	font-size: 12px;
+	line-height: 24px;
+}
+/*  底部样式 */
+#slide_l1Bot {
+	width: 399px;
+	height: 10px;
+	overflow: hidden;     /* 这个一定要加上，内容超出的部分要隐藏，免得撑高底部结构 */
+}
+/*  中间样式 */
+#slide_l1Box {
+	height: 145px;
+	width: 377px;
+	
+	
+	overflow: hidden;    /*  这个一定要加，超出的内容部分要隐藏，免得撑高中间部分 */
+}
+#slide_l1 ul li {
+	height: 24px;
+	
+}
+#slide_l1 ul li a {
+	width:190px;
+	float: left;
+	display: block;
+	overflow: hidden;
+	text-indent: 15px;
+	height: 30px;
+	line-height:25px;
+	padding-left:20px;
+	background:url(../images/expansive_list.png) no-repeat 10px 8px;
+	overflow:hidden;
+text-overflow: ellipsis;
+white-space:nowrap;
+}
+
+#slide_l1 ul li span {
+	float: right;
+	color: #999;
+
+}
+
+

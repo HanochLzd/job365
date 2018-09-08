@@ -1,0 +1,28 @@
+@charset "utf-8";
+.wrapCon{width: 1200px;margin: 25px auto 30px;overflow: hidden;}
+.wrapCon .slideNav{width: 280px;height: 788px;background: #ffffff;}
+.indexTitle,.linkTitle{ height:40px;  position:relative;border-bottom: 3px solid #d7d7d7;width: 240px;margin-left: 20px;  margin-top: 15px; }
+.indexTitle p,.linkTitle p{ position:absolute; left:0; top:0;height:38px; line-height:41px;  font-size:20px; color: #333333;  }
+.indexTitle p.title{font-size: 20px;width: 101px;float: left;border-bottom: 3px solid #0068ac;color: #0068ac;font-weight: bold;text-align: center;height: 40px; }
+.linkTitle p.title{font-size: 20px;width: 90px;float: left;color: #0068ac;font-weight: bold;text-align: center;height: 46px; }
+.indexTitle .more,.linkTitle .more{ color:#999999; float:right; line-height:50px;font-size: 12px;}
+.slideNav ul{width: 240px;margin-left: 20px;margin-top: 20px;}
+.slideNav ul li{display: block;width: 240px;height: 45px;border: 1px solid #dddddd;background: #f8f8f8;margin-bottom: 10px;border-radius: 3px;}
+.slideNav ul li a{font-size: 16px;display: block;width: 100%;line-height: 45px;margin-left: 20px;}
+.slideNav ul li:hover,.slideNav ul li.cur{background:#036eb8 url("../images/icon_edu.png") no-repeat 210px center;border: 1px solid #036eb8;border-radius: 3px; }
+.slideNav ul li:hover a,.slideNav ul li.cur a{color: #ffffff;font-weight: bold;}
+.wrapCon .wrapNews{width: 900px;background: #ffffff;}
+.wrapNews .wrapDetail{overflow: hidden;}
+.wrapNews .news{margin-left:20px;display: block;border-left: 3px solid #ffffff;  border-bottom: 1px dotted #eaeaea;
+    width: 857px;padding: 20px 0 15px 0;overflow: hidden; }
+.news img{width: 150px;height: 100px;margin-left: 10px;display: block;float: left}
+.news .intro{float: left;margin-left: 20px;width: 670px;}
+.intro h3{font-size: 16px;margin-bottom: 5px;font-weight: normal;}
+.intro span{display: block;color: #999999; }
+.intro p{line-height: 20px;margin-top: 5px;width:655px; }
+.wrapNews .news:hover{border-left: 3px solid #036eb8;background: #f8f8f8;}
+.wrapNews .news:hover h3{color: #036eb8;}
+.pages{overflow: hidden;text-align: center;width: 860px;margin: 40px auto;}
+.pages ul{overflow: hidden;margin-left: 250px;}
+.pages ul li{display: block;float: left;padding: 5px 10px;margin-left: 10px;border: 1px solid #dddddd;cursor: pointer;}
+.pages ul li:hover,.pages ul li.cur{background:#036eb8;border: 1px solid #036eb8;color: #ffffff;}

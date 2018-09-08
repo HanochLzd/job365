@@ -1,0 +1,9 @@
+@charset "utf-8";
+.inform{width: 1198px;margin: 0 auto;height: 40px;background: #f9f9f9;border: 1px solid #d7d7d7;}
+.inform h3 {  width: 75px;  float: left;  font-size: 14px;  font-weight: normal;  height: 22px;
+    background: url("../images/inform.png") no-repeat 0px 1px;  overflow: hidden;  margin-top: 10px;  padding-left: 30px;  margin-left: 20px; }
+.inform .informCon {  overflow: hidden;  width: 1060px;  margin-left: 10px; float: left }
+.informCon  ul {  float: left;  height: 40px;  overflow: hidden;  zoom: 1;  width: 1060px  }
+.informCon  ul li {  line-height: 40px;  list-style: none;  font-size: 14px;  width: 1030px;  height: 40px;background: url(../images/icon.png) no-repeat left center;padding-left: 5px;}
+.informCon  ul li a { color: #666666;  text-decoration: none; display: block;float: left;width: 900px; overflow: hidden;text-overflow: ellipsis;white-space: nowrap;}
+.informCon  ul li  span{display: block;float: right;color: #999999;}

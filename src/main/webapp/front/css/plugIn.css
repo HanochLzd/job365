@@ -1,0 +1,28 @@
+@charset "utf-8";
+.wrapCon{width: 1200px;margin: 25px auto;overflow: hidden;}
+.wrapCon .slideNav{width: 280px;height: 720px;background: #ffffff;}
+.indexTitle,.linkTitle{ height:40px;  position:relative;border-bottom: 3px solid #d7d7d7;width: 240px;margin-left: 20px;  margin-top: 15px; }
+.indexTitle p,.linkTitle p{ position:absolute; left:0; top:0;height:38px; line-height:41px;  font-size:20px; color: #333333;  }
+.indexTitle p.title{font-size: 20px;width: 101px;float: left;border-bottom: 3px solid #0068ac;color: #0068ac;font-weight: bold;text-align: center;height: 40px; }
+.linkTitle p.title{font-size: 20px;width: 90px;float: left;color: #0068ac;font-weight: bold;text-align: center;height: 46px; }
+
+.slideNav ul{width: 240px;margin-left: 20px;margin-top: 20px;}
+.slideNav ul li{display: block;width: 240px;height: 45px;border: 1px solid #dddddd;background: #f8f8f8;margin-bottom: 10px;border-radius: 3px;}
+.slideNav ul li a{font-size: 16px;display: block;width: 100%;line-height: 45px;margin-left: 20px;}
+.slideNav ul li:hover,.slideNav ul li.cur{background:#036eb8 url("../images/icon_edu.png") no-repeat 210px center;border: 1px solid #036eb8;border-radius: 3px; }
+.slideNav ul li:hover a,.slideNav ul li.cur a{color: #ffffff;font-weight: bold;}
+.wrapCon .wrapNews{width: 900px;background: #ffffff;overflow: hidden;float: right}
+.wrapNews .plugIn{width: 860px;margin-left: 20px;overflow: hidden}
+.plugIn .plugList{overflow: hidden;margin-top:20px; }
+.plugList .title{height: 30px;width: 100%;border-bottom: 1px dashed #dddddd;}
+.title h3{font-size: 16px;float: left;padding-right: 20px;font-weight: normal;}
+.title:hover{color: #036eb8;}
+.title input{width: 42px;height: 16px;margin-top:4px;text-align: center;line-height: 16px;background:#f3f3f3;border-radius: 5px;border: 1px solid #f3f3f3;cursor: pointer; color: #666666;}
+.title input:hover{background: #036eb8;border: 1px solid #036eb8;color: #ffffff;}
+.plugList .intro{width: 100%;color: #666666;line-height: 25px;margin-top: 10px;}
+.intro p{text-align: justify;}
+
+.pages{overflow: hidden;text-align: center;width: 860px;margin: 40px auto;}
+.pages ul{overflow: hidden;margin-left: 250px;}
+.pages ul li{display: block;float: left;padding: 5px 10px;margin-left: 10px;border: 1px solid #dddddd;cursor: pointer;}
+.pages ul li:hover,.pages ul li.cur{background:#036eb8;border: 1px solid #036eb8;color: #ffffff;}

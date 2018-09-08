@@ -1,0 +1,46 @@
+@charset "utf-8";
+
+.wrapCon{width: 1200px;margin: 25px auto 40px;overflow: hidden;}
+.wrapCon .testInform{width: 387px;overflow: hidden}
+.testInform img{width: 387px;height: 260px;}
+.testInform .mesCon{overflow: hidden;margin-top: 35px;margin-left: 25px;max-height: 285px;}
+.testInform h3{font-size: 14px;color: #111111;font-weight: normal;}
+.testInform h3 span{display: block;font-weight: bold;}
+.testInform strong{color: #ff0000;margin: 15px 0;display: block;font-size: 14px;}
+.testInform p{font-size: 14px;color: #111111;margin-bottom: 10px;}
+.wrapCon .examPaper,.wrapCon .butBoard,.wrapCon .juniorhSch,.wrapCon .hightSch{width: 386px;overflow: hidden;margin-left: 20px;}
+
+.indexTitle,.linkTitle{ height:40px;  position:relative;border-bottom: 3px solid #d7d7d7;}
+.indexTitle p,.linkTitle p{ position:absolute; left:0; top:0;height:38px; line-height:41px;  font-size:20px; color: #333333;  }
+.indexTitle p.title{font-size: 20px;float: left;border-bottom: 3px solid #0068ac;color: #0068ac;font-weight: bold;text-align: center;height: 40px; }
+.linkTitle p.title{font-size: 20px;width: 90px;float: left;color: #0068ac;font-weight: bold;text-align: center;height: 46px; }
+.indexTitle .more,.linkTitle .more{ color:#999999; float:right; line-height:50px;font-size: 12px;}
+.news ul{width: 100%;overflow: hidden;font-size: 14px;}
+.news ul li{display: block;overflow: hidden;background: url(../images/icon.png) no-repeat left center;padding-left: 5px;}
+.news ul li a{display: block;float: left;font-size:14px;line-height: 31px;width: 386px;overflow: hidden;white-space: nowrap;text-overflow: ellipsis;}
+.news ul li span{display: block;float: right;width:50px; text-align: right;color: #666666;}
+.news ul li a:hover{color: #036eb8;}
+.juniorhSch,.hightSch{margin-top: 10px;}
+.juniorhSch ul li,.hightSch ul li {margin-right: 10px;display: block;float: left; }
+.juniorhSch ul li a,.hightSch ul li a {width:178px;}
+
+.wrapCon .examMes{width: 790px;overflow: hidden;margin-left: 20px;margin-top: 30px;}
+.examMes .examSys,.examMes .sysIns,.examMes .instructions{width: 250px;height: 96px;border-radius: 5px;}
+.examMes .examSys{background: #63a2cf;margin-right: 20px;}
+.examMes .sysIns{background: #e3aa42;}
+.examMes .instructions{background: #8dc263;}
+.examSys img,.sysIns img,.instructions img{width: 48px;height: 48px;display: block;float: left;margin: 24px 15px 24px 20px;}
+.examSys a{display: block;float: left;font-size: 16px;color: #ffffff;line-height: 48px;  margin-top: 20px;}
+.sysIns a{display: block;width: 120px;float: left;margin-top: 25px;font-size: 16px;color: #ffffff;margin-left: 15px;}
+.instructions .testList{float: left;overflow: hidden;width: 162px; margin-top: 20px;}
+.testList a{display: block;text-align: right;font-size: 13px;color: #ffffff;padding-right: 12px;}
+
+.areaNews{width: 1200px;overflow: hidden;}
+.areaNews ul li{display: block;float: left;width: 580px;margin-right: 10px;}
+.areaNews ul li a{width: 570px;}
+.qqGroup {  border-top: none;  border-bottom: 3px solid #ff7f3f;  }
+.qqGroup ul{margin-bottom: 15px;overflow: hidden;}
+.qqGroup ul li{width: 230px;}
+
+
+

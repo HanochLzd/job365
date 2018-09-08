@@ -1,0 +1,48 @@
+@charset "utf-8";
+.regBg{width:100%;height: 100%;position: absolute;top: 0;z-index: -1}
+.regBg img{width: 100%;height: 50%;}
+.head{width: 1200px;margin: 0 auto;overflow: hidden;}
+.head img{display: block;width: 302px;height: 56px;margin: 30px 0;}
+.wrapCon{width: 870px;margin: 10px auto;background: #FFFFFF;border: 1px solid #dddddd;border-radius: 3px; }
+.wrapCon .title{height: 46px;background: url("../images/regTitBg.png") no-repeat top center;}
+.title h3{font-size: 18px;color: #3a3a3a;line-height: 46px;padding-left: 30px;font-weight: normal;}
+.wrapCon .register{overflow: hidden;width: 800px;margin-left: 258px;margin-top: 44px;padding-bottom: 70px; }
+.register .regNav{overflow: hidden;margin-bottom: 40px;  margin-left: 115px}
+.regNav ul{overflow: hidden;}
+.regNav ul li{display: block;float: left;width:206px;height:34px;text-align: center;line-height: 34px;color: #3a3a3a;font-size: 14px;cursor: pointer;}
+.regNav ul li.nomalReg{background: url("../images/regBg_1.png") no-repeat 0 0; color: #ffffff}
+.regNav ul li.phoneReg{background: url("../images/regBg2.png") no-repeat 0 -40px;}
+
+.register .regBox{  overflow: hidden;  }
+.regBox p{margin-bottom:20px;height: 35px;line-height: 35px;}
+.regBox p i{color: #ff2c02;padding: 0 5px;}
+.regBox p span.name{font-size: 14px;color:#666666;text-align: right; width: 100px;display: inline-block}
+.regBox p label{font-size: 14px;color: #666666;}
+
+.regBox p input[type="radio"] {  display: none;  }
+.regBox p label {  margin-left: 10px;  padding-left: 20px;  cursor: pointer;
+    background: url('../images/radio.png') no-repeat 2px 5px;  }
+.regBox p label.checked {  background-position: 2px -12px;  }
+.regBox p input[type=text],.regBox p input[type=password]{width: 259px;padding-left:5px;height: 37px;border: 1px solid #dfdfdf;margin-left: 10px;}
+.regBox p input[type=button]{font-size:16px;width: 120px;cursor:pointer;font-weight:bold;height: 31px;background: #0068ac;border-radius: 3px;color: #ffffff;border: 1px solid #0068ac;}
+.regBox p input[type=button].regBtn1{margin-left: 0px;}
+.regBox p input[type=button].cnacel{margin-left: 50px;}
+.regBox p span.tips{color: #999999;padding-left: 10px;}
+.regBox p span.success{/* background: url("../images/failSuc.png") no-repeat 12px 2px; */  padding-left: 10px;}
+.regBox p span.error{/* background: url("../images/failSuc.png") no-repeat 12px 2px; */color: #ef6c02;  padding-left: 10px;background-position: 12px -15px;}
+.regBox p.speTips{margin-left: 100px;}
+.regBox p.btn{margin-top: 40px;margin-bottom: 0px;}
+.regBox .stroPwd{overflow: hidden;margin-left: 16px;margin-bottom:20px;}
+.stroPwd .strength{margin-bottom: 10px;}
+.strength label{font-size: 14px;color: #666666;}
+.strength .level{color: #0068ac;font-size: 14px;}
+.len_box{width:150px;height:11px;margin-top:10px;background: #e5e5e5;}
+.len_color{width:1%;background:#F00;height:12px;}
+.text{width:200px;height:22px;}
+
+.footer {text-align: center;width: 100%;margin: 40px 0;}
+.footer p{text-align: center;margin-top: 10px;}
+input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {color: #666666;}
+input:-moz-placeholder, textarea:-moz-placeholder {color:#666666;}
+input::-moz-placeholder, textarea::-moz-placeholder {color:#666666;}
+input:-ms-input-placeholder, textarea:-ms-input-placeholder {color:#666666;}

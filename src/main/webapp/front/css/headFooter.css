@@ -1,0 +1,31 @@
+﻿@charset "utf-8";
+body{background:#f2fbff url("") no-repeat center 40px;width: 100%;background-size:100%}
+.content{width: 1200px;margin: 0 auto;overflow: hidden;}
+/*登录*/
+.wrapLogin{width: 100%;background: #f0f0f0;height: 40px;}
+.wrapLogin .login{height: 40px;width: 1200px;margin: 0 auto;}
+.login span{float: left;display: block;border-radius: 5px;}
+.login .time span{margin-right: 10px;font-size: 14px;margin-top: 8px;}
+.login .register span{background:#3c8abd;color: #ffffff;cursor: pointer; padding:3px 10px 5px 10px;margin-left: 10px;font-size: 16px;margin-top: 5px;}
+.login .register span:hover{background:#2b7bb0;}
+
+/*搜索*/
+.head .search{width: 302px;float: right;overflow: hidden;background: url("../images/searchBg.png") no-repeat right center;height: 44px;margin-top: -109px;margin-right: 25px;}
+.search input{    width: 250px;  height: 30px;line-height: 30px;  margin-left: 10px;  border: none;  color: #aaaaaa;display: block;float: left;
+    margin-top:6px;font-size: 15px;}
+.search img{display: block;width: 25px;height: 25px;float: left;margin: 8px;}
+/*qq群*/
+.qqGroup{width: 1200px;overflow: hidden;border-top: 3px solid #0065a7;margin: 0 auto 20px;}
+.qqGroup ul li{width: 290px;float: left;display: block;margin-right: 10px;font-size: 16px;line-height: 25px;margin-top: 10px;}
+.qqGroup ul li img{vertical-align: text-bottom;padding-right: 5px;}
+.footer {text-align: center;width: 100%;margin: 40px 0;}
+.footer p{text-align: center;margin-top: 10px;}
+/*右侧悬浮*/
+.suspend{width: 80px;  overflow: hidden;position: fixed; bottom: 50px;right: -7px;}
+.suspend ul li{width: 55px;height: 50px;display: block;margin-bottom: 10px;cursor: pointer;}
+.suspend ul li.weixin{background: url("../images/fixedBg.png") no-repeat 0px -5px; }
+.suspend ul li.weixin:hover{background: url("../images/fixedBg.png") no-repeat 0px -65px; }
+.suspend ul li.code{background: url("../images/fixedBg.png") no-repeat -60px -5px; }
+.suspend ul li.code:hover{background: url("../images/fixedBg.png") no-repeat -60px -65px; }
+.suspend ul li.backTop{background: url("../images/fixedBg.png") no-repeat -120px -5px; }
+.suspend ul li.backTop:hover{background: url("../images/fixedBg.png") no-repeat -120px -65px; }

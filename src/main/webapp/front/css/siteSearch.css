@@ -1,0 +1,34 @@
+@charset "utf-8";
+.searchNav{width: 1200px;height: 50px;overflow: hidden;margin: 20px auto;background: #eeeeee;}
+.searchNav ul{overflow: hidden;margin-left:15px;line-height: 48px; }
+.searchNav ul li{display: block;float: left;font-size: 16px;color: #666666;padding: 0 15px;cursor: pointer;margin-right: 10px;}
+.searchNav ul li.cur,.searchNav ul li:hover{border-bottom: 2px solid #0068ac;font-weight: bold;color: #333333;}
+.wrapCon{width: 1200px;overflow: hidden;margin: 0 auto;}
+.serResult{width: 900px;overflow: hidden}
+.serResult p.count{font-size: 12px;color: #999999;}
+.bookList{overflow: hidden;margin-top: 5px;}
+.serResult a{display: block;border-bottom: 1px dashed #d7d7d7;padding-top: 10px;padding-bottom: 15px;}
+.serResult a em{color:#d8342e; font-style: normal;}
+.serResult .title{margin-top: 10px;overflow: hidden;margin-left: 20px;}
+.title span{display: block;float: left}
+.title span.name{font-size: 18px;color: #0068ac;border-bottom:1px solid #0068ac;max-width: 740px;overflow: hidden;text-overflow: ellipsis;white-space: nowrap;}
+.title span.author{font-size: 14px;line-height: 33px;padding-left: 20px;}
+.serResult a p{line-height: 20px;margin-left: 20px;width: 856px;}
+.serResult a:hover{background: #f8f8f8;}
+/*页码*/
+.page{overflow: hidden;margin-left: 20px;width: 700px;margin-bottom: 50px;}
+.page ul {overflow: hidden;text-align: center;margin-left: 150px;margin-top: 30px;}
+.page ul li{padding:5px 10px;cursor:pointer;color: #666666;float: left;text-align: center;border: 1px solid #dddddd;margin-left: 10px;}
+.page ul li.cur,.page ul li:hover{background: #036eb8;border: 1px solid #036eb8;color: #ffffff;}
+
+
+.personSer{overflow: hidden;width: 270px;}
+.personSer .tittle{width: 100%;height: 32px;line-height: 32px;font-size: 16px;background: #eeeeee;border-left: 10px solid #e0e0e0;padding-left: 10px;}
+.personSer ul{margin-top: 20px;overflow: hidden;}
+.personSer ul li{display: block;height: 30px;}
+.personSer ul li span{display: block;float:left;width: 14px;height: 14px;background: #c8c7c7;text-align: center;line-height: 14px;color: #ffffff;}
+.personSer ul li span.icon{background: #0068ac;}
+.personSer ul li a{width: 245px;display: block;float: left;margin-left: 10px;overflow: hidden;text-overflow: ellipsis;white-space: nowrap;}
+.personSer ul li a:hover{color: #0068ac;}
+
+

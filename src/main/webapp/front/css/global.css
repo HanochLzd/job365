@@ -1,0 +1,13 @@
+@charset "utf-8";
+body,form,textarea,select,option,ol,ul,li, h1,h2,h3,h4,h5,h6,p,th,td,dl,dt,dd,menu,blockquote,fieldset,legend,button,input,hr,pre,div,form,span,p,a{margin: 0;padding: 0;}
+body{font-family:'微软雅黑';font-size:12px;background: #f2f2f2;color: #333333;}
+ul,ol,img{border:0px;}
+li{list-style-type:none;}
+input,select,textarea{vertical-align:middle;outline:none;}
+a{text-decoration:none; color:#333;}
+.clear{clear:both;font-size:0;height:0;line-height:0;}
+.clearfix{overflow:hidden;zoom:1;}
+.fl{float: left}
+.fr{float: right}
+
+

@@ -1,0 +1,45 @@
+@charset "utf-8";
+.wrapCon{width: 1200px;margin: 25px auto 30px;overflow: hidden; }
+.wrapCon .newsL{overflow: hidden;margin-right: 20px;  }
+.newsL .silder {width: 100%;height:200px; overflow: hidden;text-align: center;margin: 0 auto;position:relative;}
+.silder .silder_list {height:200px; overflow:hidden;position: relative;}
+.silder .silder_list a{position:absolute; top:0;left:0;}
+.silder .silder_list a,.silder .silder_list img{display:inline-block;float:left;}
+.silder .silder_page{left:0;text-align:right; margin:0 auto;right:1px; overflow:hidden;position:absolute; top: 264px;}
+.silder .silder_page li{font-size:14px; float:left; width: 36px;height: 36px; text-align: center;line-height: 36px;
+    background:rgba(0,0,0,0.6);display:inline-block;color:#ffffff;margin-right: 1px;}
+.silder .silder_page li.current{background:#ffffff;color:#0068ac;}
+.silder_desc{color:#fff;float:left;line-height:42px;height:42px;width:100%;overflow:hidden;position:absolute;left:0;bottom:0;text-align:left;text-indent:10px;}
+.silder .silder_page li:hover{cursor:pointer;}
+.silder .imgMore{font-size:12px; float:left; width: 36px;height: 36px; text-align: center;line-height: 36px;
+    background:rgba(0,0,0,0.6);display:inline-block;position: absolute;right: 0;top: 264px;cursor: pointer;z-index: 10}
+.imgMore a{color: #ffffff;}
+.silder_list .news{width:480px;height:200px;position: absolute;top: 330px;left: 0;z-index: 1000;}
+.silder_list .news h3{font-size: 16px;width: 430px;margin:30px 0 10px 20px; font-weight: normal; }
+.silder_list .news h3 a{color:#0068ac;cursor: pointer;}
+.silder_list .news p{font-size: 14px;line-height: 25px;text-align: left}
+.wrapCon .newsC{width: 380px;margin-right: 20px;}
+.title{width: 100%;overflow: hidden;margin-top: 15px;}
+.title img{display: block;float: left;width: 20px;height: 20px;}
+.title h4{font-size: 16px;font-weight: normal;float: left;margin-left: 3px;}
+.title a{display: block;float: right;color: #999999;cursor: pointer;margin-top: 5px;}
+.newsC .news{overflow: hidden;margin: 20px 0;border-bottom: 1px solid #dddddd;width: 100%;}
+.news .newsList{overflow: hidden;margin-bottom: 20px;}
+.newsList img{display: block;float: left;width: 130px;height: 95px;}
+.newsList .newsCon{width: 240px;float: right;}
+.newsCon h3{font-size: 18px;font-weight: normal;margin-bottom: 5px;}
+.newsCon h3 a{color: #0068ac;cursor: pointer;}
+.newsList p{color: #999999;line-height: 20px;}
+.newsC ul{width: 100%;overflow: hidden;font-size: 14px;}
+.newsC ul li{display: block;overflow: hidden;background: url(../images/icon.png) no-repeat left center;padding-left: 5px;}
+.newsC ul li a{display: block;float: left;line-height: 30px;width: 370px;overflow: hidden;white-space: nowrap;text-overflow: ellipsis;font-size: 14px;color: #666666;}
+.newsC ul li a:hover{color: #036eb8;}
+.wrapCon .newsR{width: 300px;overflow: hidden;background: #ffffff;padding-bottom: 5px;}
+.newsR .title{margin-bottom: 20px;}
+.newsR .title img{margin-left: 15px;}
+.newsR .title a{margin-right: 10px;}
+.newsR ul{overflow: hidden;width: 260px;margin: 0 auto;}
+.newsR ul li{border-bottom: 1px solid #dddddd;padding-bottom: 10px;margin-bottom: 12px;}
+.newsR ul li>*{display: block;}
+.newsR ul li span{color: #999999;line-height:25px; }
+.newsR ul li a{color: #666666;font-size: 14px;line-height: 25px;}

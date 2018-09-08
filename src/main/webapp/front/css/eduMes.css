@@ -1,0 +1,43 @@
+@charset "utf-8";
+.wrapCon{width: 1200px;margin: 0 auto 30px;overflow: hidden;}
+.wrapCon .news{width: 386px;float: left;margin-top: 25px;}
+.wrapCon .useCen{margin-left: 15px;}
+.wrapCon .case,.wrapCon .policy{margin-right: 20px;}
+.indexTitle,.linkTitle{ height:40px;  position:relative;border-bottom: 3px solid #d7d7d7;}
+.indexTitle p,.linkTitle p{ position:absolute; left:0; top:0;height:38px; line-height:41px;  font-size:20px; color: #333333;  }
+.indexTitle p.title{font-size: 20px;width: 90px;float: left;border-bottom: 3px solid #0068ac;color: #0068ac;font-weight: bold;text-align: center;height: 40px; }
+.linkTitle p.title{font-size: 20px;width: 90px;float: left;color: #0068ac;font-weight: bold;text-align: center;height: 46px; }
+.indexTitle .more,.linkTitle .more{ color:#999999; float:right; line-height:50px;font-size: 12px;}
+.news ul{width: 100%;overflow: hidden;font-size: 14px;}
+.news ul li{display: block;overflow: hidden;background: url(../images/icon.png) no-repeat left center;padding-left: 5px;}
+.news ul li a{display: block;float: left;line-height: 30px;width: 300px;overflow: hidden;white-space: nowrap;text-overflow: ellipsis;}
+.news ul li span{display: block;float: right;width:50px; text-align: right;color: #666666;}
+.news ul li a:hover{color: #036eb8;}
+.cl:after {  visibility: hidden;  display: block;  font-size: 0;  content: " ";  clear: both;  height: 0  }
+.gundong {  width: 795px;height: 260px;float: left;overflow: hidden;margin-top: 25px;  }
+.gundong .succesny{overflow: hidden;width: 795px;height: 260px;position: relative;}
+.control {  width: 665px;  height: 260px;  background: #282828;  display: block;  position: absolute;
+    top: 0;  left: 0;  overflow: hidden;  }
+
+.change li {  width: 665px;  overflow: hidden;  text-align: center  }
+.change li .imgWrap {  display: table-cell;  width: 665px;  height: 260px;  vertical-align: middle;  cursor: pointer;  *font-size: 500px;  }
+.change li img {  width: 665px;  height: 260px;  vertical-align: middle;  overflow: hidden  }
+.change li .textDesc {  width: 100%;  height: 35px;  position: absolute;  left: 0;  bottom: 4px;  text-align: left;  overflow: hidden;  }
+.change li .opacity {  width: 100%;  height: 40px;  position: absolute;  left: 0;
+    bottom: 0;  background: #000;  filter: alpha(opacity=50);  opacity: 0.5;  }
+.change li .title {  padding: 10px 15px 0;  color: #e6e6e6;  font-size: 14px;  line-height: 22px;  }
+.change li .title a {  color: #e6e6e6;  }
+.pageClass {  text-align: center;
+    z-index: 9;  position: absolute;  top: 50px;  padding-top: 10px;  }
+.pageClass a {  display: inline-block;  width: 10px;  height: 10px;
+    margin: 0 3px;  overflow: hidden;  border: 1px solid #bebebe;  background: #bebebe;  border-radius: 5px;  outline: none  }
+.pageClass a span {  display: none  }
+.pageClass a:hover, .pageClass a.cur {  border: 1px solid #be230a;  background: #be230a  }
+.thumbWrap {  width: 125px;  height: 260px;
+    position: absolute;  right: 0;  top: 0;  overflow: hidden;  }
+.thumbWrap .thumbCont {  height: 260px;  margin: 0 auto;  overflow: hidden;  position: relative;  width: 134px;  }
+.thumbWrap ul li {  height: 80px;  overflow: hidden;  padding-left: 10px;  text-align: center;  width: 127px;
+    padding-bottom: 10px;  }
+.thumbWrap ul li div {  display: table-cell;  width: 113px;  height: 74px;  vertical-align: middle;  cursor: pointer;  *font-size: 79px;  }
+.thumbWrap ul li img {  width: 113px;  height: 74px;  overflow: hidden;  margin-top: 8px;  margin-left: -7px;  border-radius: 3px;  }
+.thumbWrap ul li.cur {  background: url("../images/iconBG.png") no-repeat left center;  }

@@ -1,0 +1,9 @@
+@charset "utf-8";
+.wrapBook{  overflow: hidden;margin-left: 20px;margin-top: 25px;margin-bottom: 60px;}
+.wrapBook .book{width: 580px;float: left;overflow: hidden;margin-bottom: 25px;display: block;height:117px}
+.book img{display: block;float: left;width: 85px;height: 120px;}
+.book:hover{background:#eaeaea}
+.book .bookIntro{float: left;margin-left: 20px;}
+.bookIntro h3{font-size: 16px;width: 370px;margin-bottom: 5px;}
+.bookIntro p{font-size: 12px;line-height: 18px;}
+.bookIntro p i{font-style: normal;}

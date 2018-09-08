@@ -1,0 +1,60 @@
+.wrapCon{width: 1200px;margin: 25px auto;overflow: hidden;}
+.wrapCon .slideNav{width: 280px;height: 720px;background: #ffffff;}
+.indexTitle,.linkTitle{ height:40px;  position:relative;border-bottom: 3px solid #d7d7d7;width: 240px;margin-left: 20px;  margin-top: 15px; }
+.indexTitle p,.linkTitle p{ position:absolute; left:0; top:0;height:38px; line-height:41px;  font-size:20px; color: #333333;  }
+.indexTitle p.title{font-size: 20px;width: 101px;float: left;border-bottom: 3px solid #0068ac;color: #0068ac;font-weight: bold;text-align: center;height: 40px; }
+.linkTitle p.title{font-size: 20px;width: 90px;float: left;color: #0068ac;font-weight: bold;text-align: center;height: 46px; }
+
+.slideNav ul{width: 240px;margin-left: 20px;margin-top: 20px;}
+.slideNav ul li{display: block;width: 240px;height: 45px;border: 1px solid #dddddd;background: #f8f8f8;margin-bottom: 10px;border-radius: 3px;}
+.slideNav ul li a{font-size: 16px;display: block;width: 100%;line-height: 45px;margin-left: 20px;}
+.slideNav ul li:hover,.slideNav ul li.cur{background:#036eb8 url("../images/icon_edu.png") no-repeat 210px center;border: 1px solid #036eb8;border-radius: 3px; }
+.slideNav ul li:hover a,.slideNav ul li.cur a{color: #ffffff;font-weight: bold;}
+.wrapCon .wrapNews{width: 900px;background: #ffffff;overflow: hidden;float: right}
+.wrapNews .useApp{width: 100%;overflow: hidden;}
+.useApp .app{width: 430px;float: left;margin-left: 20px;margin-top: 20px;}
+.app .appDetail{width: 395px;overflow: hidden;}
+.appDetail img{display: block;float: left;width:64px;height: 64px;border-radius: 10px;background: lightblue; }
+.appDetail .detail{height: 64px;width:300px;overflow: hidden;float: left;margin-left: 20px;}
+.detail a{font-size: 16px;display: block}
+.detail a:hover{ color: #036eb8;cursor: pointer;}
+.detail p{height:22px;line-height: 22px;color: #999999;}
+.detail p span{padding-right: 10px;}
+.detail p.keyWords span{font-size: 14px;}
+.detail .start{width: 395px;overflow: hidden;height: 18px;margin-top: 5px;}
+.start ul{width:75px;overflow: hidden;float: left;height: 10px;margin-top: 4px;}
+.start span{float: left;padding-right: 10px;display: block;color: #999999;}
+.app .intro{clear: both;width: 395px;margin-top: 15px;color: #666666;line-height: 25px;height: 80px;}
+.intro p{text-align: justify;}
+.rating{  overflow:hidden;  width:80px;  height:16px;  padding:0;  list-style:none;  clear:both;  position:relative;
+    background: url(../images/start.png) no-repeat 0 0;  }
+.nostar {background-position:0 0}
+.onestar {background-position:0 -11px;}
+.twostar {background-position:0 -23px;}
+.threestar {background-position:0 -35px}
+.fourstar {background-position:0 -47px}
+.fivestar {background-position:0 -59px}
+ul.rating li {  cursor: pointer;  float:left;  text-indent:-999em;  }
+ul.rating li a {  position:absolute;  left:0;  top:0;  width:10px;  height:16px;  text-decoration:none;  z-index: 200;  }
+ul.rating li.one a {left:0}
+ul.rating li.two a {left:12px;}
+ul.rating li.three a {left:25px;}
+ul.rating li.four a {left:37px;}
+ul.rating li.five a {left:49px;}
+ul.rating li a:hover {  z-index:2;  width:80px;  height:10px;  overflow:hidden;  left:0;  background: url(../images/start.png) no-repeat 0 0;}
+ul.rating li.one a:hover {background-position:0 -11px;}
+ul.rating li.two a:hover {background-position:0 -23px;}
+ul.rating li.three a:hover {background-position:0 -35px}
+ul.rating li.four a:hover {background-position:0 -47px}
+ul.rating li.five a:hover {background-position:0 -59px}
+
+.app .company{width: 395px;height: 25px;overflow: hidden;line-height: 25px;cursor: pointer;}
+.company span{display: block;float: left;width: 310px;text-overflow: ellipsis;white-space: nowrap;overflow: hidden;color: #666666;}
+.company span i{font-style: normal;}
+.company a{width: 54px;height: 20px;background:#efefef;border: 1px solid #d9d9d9;line-height: 20px;
+    border-radius: 5px;color: #666666;font-weight: bold;float: right;display: block;text-align: center; }
+.company a:hover{background:#036eb8;color: #ffffff;border: 1px solid #036eb8; }
+.pages{overflow: hidden;text-align: center;width: 860px;margin: 40px auto;}
+.pages ul{overflow: hidden;margin-left: 250px;}
+.pages ul li{display: block;float: left;padding: 5px 10px;margin-left: 10px;border: 1px solid #dddddd;cursor: pointer;}
+.pages ul li:hover,.pages ul li.cur{background:#036eb8;border: 1px solid #036eb8;color: #ffffff;}

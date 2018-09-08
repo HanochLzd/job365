@@ -1,0 +1,20 @@
+@charset "utf-8";
+.wrapCon{width: 1200px;margin: 25px auto 30px;overflow: hidden;background: #ffffff;}
+.wrapCon .palce{font-size: 14px;color: #666666;width: 1160px;margin: 10px auto;overflow: hidden;border-bottom: 1px solid #dddddd;line-height: 30px;}
+.palce span{display: inline-table;padding-right: 5px;}
+.wrapArt {width: 1160px;margin: 20px auto;}
+.wrapArt h1{font-size: 24px;font-weight: normal;text-align: center;}
+.wrapArt .artIntro{overflow: auto;text-align: center;border-bottom: 1px solid #dddddd;margin-top: 20px;height: 25px;line-height: 15px;}
+.artIntro i{font-style: normal;}
+.artIntro .time{margin-left: 400px;padding-right: 10px;border-right: 1px solid #999999; }
+.artIntro .fontSize{margin-left: 10px;padding-right: 10px;border-right: 1px solid #999999;}
+.fontSize i{padding-right: 10px;cursor: pointer;}
+.artIntro .share{margin-left: 10px;cursor: pointer;}
+.wrapArt .article{margin-top: 20px;overflow: hidden}
+.article img{width: 450px;height: 300px;display: block;margin: 20px auto 30px;}
+.article p{line-height: 25px;font-size: 14px;margin-bottom: 20px;text-indent: 25px;text-align: justify;}
+.wrapArt .source{overflow: hidden;border-top: 1px solid #dcdcdc;height: 40px;line-height: 40px;color: #999999;margin-top: 20px;margin-bottom: 50px;}
+.source p{width: 500px;float: left;}
+.source p i{  font-style: normal;}
+.source ul{float: right;overflow: hidden;}
+.source ul li{float: left;display: block;cursor: pointer;}

@@ -1,0 +1,25 @@
+﻿@charset "utf-8";
+.head{height: 148px;  width: 1200px;margin: 0 auto;}
+.head .logo{width: 300px;float: left;overflow: hidden;margin-top: 69px;}
+.head img.wenzi{margin-top: 35px;  margin-left: 45px;}
+.logo img{width: 302px;height: 56px;display: block;float: left;margin-top: 5px;}
+/*导航*/
+.nav{width: 720px;height: 45px;background: #f7f7f7;border-bottom: 5px solid #0065a7;margin: -50px auto;float: left;    margin-left: 376px;}
+.nav>ul> li{width: 133px;height: 45px;display: block;float: left;text-align: center;line-height: 45px;position: relative;}
+.nav> ul >li> a{display: block;color: #0068ac;font-size: 16px;}
+.nav> ul> li> a:hover,.nav> ul> li> a.select{background: #0065a7;color: #ffffff;font-weight:bold;}
+.nav> ul> li>ul{background: #FFFFFF;border: 1px solid #0065a7;border-top:5px solid #0065a7;position: absolute;z-index: 1000;overflow: hidden;display: none;padding-bottom: 5px; }
+.nav> ul> li:hover>ul{display: block;}
+.nav> ul> li>ul> li{height: 40px;line-height: 40px;margin-left: 3px;margin-right: 3px;}
+.nav> ul> li>ul> li.cur,.nav> ul> li>ul> li:hover{background:#f3f3f6; }
+.nav> ul> li>ul> li.cur a,.nav> ul> li>ul> li:hover a{color: #0068ac;font-size: 14px;display: block;}
+.nav> ul> li>ul> li a{color: #666666;font-size: 14px;display: block;}
+
+.nav>ul> li.last{width: 136px;}
+.photo{width:186px;display: flex;}
+.space{margin-left: 43px;display:none}
+.space>ul>li{display: block;font-size: 18px;margin: 0px 20px 0px 24px;padding-top: 17px;cursor: pointer;height:23px}
+.space>ul>li>a:hover{color:#0065a7}
+.photo img{display: block;width: 42px;height: 42px;border-radius: 50%;margin-left:100px}
+.test:hover>div.space{display:block}
+.photo a{font-size: 16px;margin-top: 9px;display: block;position: absolute;margin-left: -23px;}
