@@ -1,4 +1,4 @@
-<%@ page language="java" import="java.util.*" pageEncoding="UTF-8" %>
+<%@ page pageEncoding="UTF-8" %>
 <%@include file="../common/taglibs.jsp" %>
 <html>
 <head>
@@ -16,15 +16,15 @@
             $("#login-form").submit(function () {
 
                 if (flag) {
-                    var url = "<%=basePath%>login/doLogin.do";
+                    var url = "${baseurl}login/doLogin.do";
                     $.post(url, $("#login-form").serialize(), function (data) {
 
                         var jsonReturn = eval("(" + data + ")");
 
-                        if (jsonReturn.code == "1") {
+                        if (jsonReturn.code === "1") {
 
                             layer.alert(jsonReturn.msg, {icon: 6, time: 0}, function (data) {
-                                location.href = "<%=basePath%>login/main/index.do";
+                                location.href = "${baseurl}login/main/index";
                             });
 
                         } else {
@@ -41,7 +41,7 @@
         });
 
         function register(title, url, w, h) {
-            var url = "<%=basePath%>login/doRegister";
+            url = "${baseurl}login/doRegister";
             <%-- window.location.href="<%=basePath%>login/doRegister.do"; --%>
 
             layer_show(title, url, w, h);
@@ -59,13 +59,13 @@
             <div class="row cl">
                 <label class="form-label col-xs-3"><i class="Hui-iconfont">&#xe60d;</i></label>
                 <div class="formControls col-xs-8">
-                    <input id="userName" name="userName" type="text" placeholder="账号" class="input-text size-L">
+                    <input id="userName" name="userName" type="text" placeholder="账号" class="input-text size-L" required>
                 </div>
             </div>
             <div class="row cl">
                 <label class="form-label col-xs-3"><i class="Hui-iconfont">&#xe60e;</i></label>
                 <div class="formControls col-xs-8">
-                    <input id="password" name="password" type="password" placeholder="密码" class="input-text size-L">
+                    <input id="password" name="password" type="password" placeholder="密码" class="input-text size-L" required>
                 </div>
             </div>
             <div class="row cl">

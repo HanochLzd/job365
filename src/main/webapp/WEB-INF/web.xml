@@ -99,7 +99,7 @@
     </servlet-mapping>
 
     <welcome-file-list>
-        <welcome-file>/login/init</welcome-file>
+        <welcome-file>/</welcome-file>
     </welcome-file-list>
 
 </web-app>

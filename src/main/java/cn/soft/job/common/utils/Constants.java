@@ -104,6 +104,11 @@ public class Constants {
 
     public static final Integer PORTAL_PAGE_NUM = 10; //门户网站列表页每页显示记录数
 
+    /**
+     * 用户状态 1：正常 非1：禁用
+     */
+    public static final Integer USER_NORMAL_CODE = 1;
+
 
     /*
      * 列表每页记录数，默认每页20条。
