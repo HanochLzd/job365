@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="cn.soft.job.sys.mapper.RoleMapper">
+    <resultMap type="cn.soft.job.sys.pojo.po.Role" id="BaseResultMap">
+        <result property="id" column="id" javaType="Integer" jdbcType="BIGINT" />
+        <result property="roleName" column="role_name" javaType="String"
+                jdbcType="VARCHAR" />
+        <result property="roleDesc" column="role_desc" javaType="String"
+                jdbcType="VARCHAR" />
+        <result property="createDate" column="create_date" javaType="Date"
+                jdbcType="DATE" />
+        <result property="status" column="role_status" javaType="int"
+                jdbcType="BIGINT" />
+    </resultMap>
+
+</mapper>

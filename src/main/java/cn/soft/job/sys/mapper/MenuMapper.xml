@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="cn.soft.job.sys.mapper.MenuMapper">
+
+
+    <resultMap type="cn.soft.job.sys.pojo.po.Menu" id="BaseResultMap">
+        <result property="id" column="id" javaType="int" jdbcType="INTEGER"/>
+        <result property="parentid" column="parent_id" javaType="int" jdbcType="INTEGER"/>
+        <result property="menuName" column="menu_name" javaType="string" jdbcType="VARCHAR"/>
+        <result property="menuUrl" column="menu_url" javaType="string" jdbcType="VARCHAR"/>
+        <result property="menuIcon" column="menu_icon" javaType="string" jdbcType="VARCHAR"/>
+        <result property="menuDesc" column="menu_desc" javaType="string" jdbcType="VARCHAR"/>
+        <result property="menuType" column="menuType" javaType="int" jdbcType="INTEGER"/>
+        <result property="status" column="menu_status" javaType="int" jdbcType="INTEGER"/>
+    </resultMap>
+
+    <resultMap type="cn.soft.job.sys.pojo.po.Menu" id="SysMenusMap" extends="BaseResultMap">
+        <collection property="childMenus" column="{menId=id,userId=user_id}" select="getChildMenu" javaType="list"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        id, menu_name, menu_url, parentId, menuType, menu_desc, menu_icon, menu_status
+    </sql>
+
+    <!--Menu getAllMenu(String userid);-->
+    <select id="getAllMenu" parameterType="long" resultMap="BaseResultMap">
+        select distinct m.id, m.menu_name, m.menu_url, m.parentId, m.menu_icon, m.menu_desc, u.id user_Id
+        from menu m,
+             role r,
+             user u,
+             role_menu rm,
+             user_role ur
+        where u.id = ur.user_id
+          and ur.rol_id = r.id
+          and r.id = rm.role_id
+          and rm.menu_id = m.id
+          and u.id = #{id}
+          and m.parentId = 0
+    </select>
+
+    <!--List<Menu> getAllChlidMenu(@Param("id") Long userid, @Param("menuId") Integer menuId);-->
+    <select id="getAllChlidMenu" parameterType="int" resultMap="BaseResultMap">
+        select distinct m.id, m.menu_name, m.menu_url, m.parentId, m.menu_icon, m.menu_desc
+        from menu m,
+             role r,
+             user u,
+             role_menu rm,
+             user_role ur
+        where u.id = ur.user_id
+          and ur.rol_id = r.id
+          and r.id = rm.role_id
+          and m.id = rm.menu_id
+          and u.id = #{userId}
+          and m.parentId = #{menuId}
+    </select>
+
+
+</mapper>

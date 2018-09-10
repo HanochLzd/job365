@@ -17,4 +17,6 @@ public interface UserService {
      * @return User
      */
     User selectByUserName(String userName);
+
+    Object savePwd(User user, String pwd1, String pwd2, String pwd3);
 }

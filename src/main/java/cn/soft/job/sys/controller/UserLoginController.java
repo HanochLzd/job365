@@ -5,7 +5,9 @@ import cn.soft.job.common.utils.Constants;
 import cn.soft.job.common.utils.DateUtil;
 import cn.soft.job.common.utils.MD5Util;
 import cn.soft.job.sys.controller.base.BaseController;
+import cn.soft.job.sys.pojo.po.Menu;
 import cn.soft.job.sys.pojo.po.User;
+import cn.soft.job.sys.service.MenuService;
 import cn.soft.job.sys.service.UserService;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,6 +17,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpSession;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -30,6 +33,9 @@ public class UserLoginController extends BaseController {
 
     @Autowired
     private UserService userService;
+
+    @Autowired
+    private MenuService menuService;
 
     @RequestMapping("/doRegister")
     public ModelAndView doregister() {
@@ -81,10 +87,66 @@ public class UserLoginController extends BaseController {
         outJson(resultMap);
     }
 
+    /**
+     * 菜单管理（不同的角色显示不同的菜单）
+     *
+     * @param session session
+     * @return ModelAndView
+     */
     @RequestMapping("/main/index")
     public ModelAndView index(HttpSession session) {
         ModelAndView modelAndView = new ModelAndView();
+        User user = (User) session.getAttribute(Constants.LONGIN_USER);
+        List<Menu> menuList = menuService.getAllMenu(user.getId());
+
+        for (Menu menu : menuList) {
+            List<Menu> menuChild = menuService.getAllChlidMenu(user.getId(), menu.getId());
+            menu.setChildMenus(menuChild);
+        }
+
+        session.setAttribute(Constants.LONGIN_USER, user);
+        modelAndView.addObject("menuList", menuList);
+        modelAndView.setViewName("main/index");
         return modelAndView;
+    }
+
+    /**
+     * 修改密码
+     */
+    @RequestMapping("/changePassword")
+    public String changePassword() {
+        logger.info("修改密码操作...");
+        return "login/changePassword";
+    }
+
+    /**
+     * 保存修改密码
+     * pwd1 原始密码
+     * pwd2  pwd3 输入的新密码
+     */
+    @RequestMapping("/savePwd")
+    public void savePwd(String pwd1, String pwd2, String pwd3) {
+        logger.info("保存修改后的密码...");
+        User user = (User) session.getAttribute(Constants.LONGIN_USER);
+        System.out.println("密码：" + user.getUserPassword() + "-" + pwd1 + "-" + pwd2);
+        //输出返回结果至页面
+        outJson(userService.savePwd(user, pwd1, pwd2, pwd3));
+    }
+
+    /**
+     * 欢迎页
+     *
+     * @return
+     */
+    @RequestMapping("/welcome")
+    public String welcome() {
+        return "main/desktop";
+    }
+
+    @RequestMapping("/exit")
+    public String exit() {
+        session.removeAttribute(Constants.LONGIN_USER);
+        return "redirect:/";
     }
 
 }

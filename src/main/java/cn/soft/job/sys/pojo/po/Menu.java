@@ -1,5 +1,7 @@
 package cn.soft.job.sys.pojo.po;
 
+import java.util.List;
+
 public class Menu {
     private Integer id;
 
@@ -16,6 +18,24 @@ public class Menu {
     private String menuIcon;
 
     private Integer menuStatus;
+
+    private List<Menu> childMenus;
+
+    public Menu() {
+    }
+
+    public Menu(Integer id, String menuName, String menuUrl, Integer parentid, Integer menutype,
+                String menuDesc, String menuIcon, Integer menuStatus, List<Menu> childMenus) {
+        this.id = id;
+        this.menuName = menuName;
+        this.menuUrl = menuUrl;
+        this.parentid = parentid;
+        this.menutype = menutype;
+        this.menuDesc = menuDesc;
+        this.menuIcon = menuIcon;
+        this.menuStatus = menuStatus;
+        this.childMenus = childMenus;
+    }
 
     public Integer getId() {
         return id;
@@ -79,5 +99,28 @@ public class Menu {
 
     public void setMenuStatus(Integer menuStatus) {
         this.menuStatus = menuStatus;
+    }
+
+    public List<Menu> getChildMenus() {
+        return childMenus;
+    }
+
+    public void setChildMenus(List<Menu> childMenus) {
+        this.childMenus = childMenus;
+    }
+
+    @Override
+    public String toString() {
+        return "Menu{" +
+                "id=" + id +
+                ", menuName='" + menuName + '\'' +
+                ", menuUrl='" + menuUrl + '\'' +
+                ", parentid=" + parentid +
+                ", menutype=" + menutype +
+                ", menuDesc='" + menuDesc + '\'' +
+                ", menuIcon='" + menuIcon + '\'' +
+                ", menuStatus=" + menuStatus +
+                ", childMenus=" + childMenus +
+                '}';
     }
 }
