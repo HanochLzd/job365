@@ -2,15 +2,56 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="cn.soft.job.sys.mapper.RoleMapper">
     <resultMap type="cn.soft.job.sys.pojo.po.Role" id="BaseResultMap">
-        <result property="id" column="id" javaType="Integer" jdbcType="BIGINT" />
-        <result property="roleName" column="role_name" javaType="String"
-                jdbcType="VARCHAR" />
-        <result property="roleDesc" column="role_desc" javaType="String"
-                jdbcType="VARCHAR" />
-        <result property="createDate" column="create_date" javaType="Date"
-                jdbcType="DATE" />
-        <result property="status" column="role_status" javaType="int"
-                jdbcType="BIGINT" />
+        <result property="id" column="id" jdbcType="BIGINT"/>
+        <result property="roleName" column="role_name" jdbcType="VARCHAR"/>
+        <result property="roleDesc" column="role_desc" jdbcType="VARCHAR"/>
+        <result property="createDate" column="create_date" jdbcType="TIMESTAMP"/>
+        <result property="status" column="role_status" jdbcType="BIGINT"/>
     </resultMap>
+
+    <sql id="Base_Column_List">
+        id, role_name, role_desc, create_date, role_status
+    </sql>
+
+    <!--List<Role> getAllRole();-->
+    <select id="getAllRole" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List"/>
+        from role
+        where role_status &lt;&gt; -1
+        order by id desc
+    </select>
+
+    <!--List<Role> getOwnRoleByUserId(int userid);-->
+    <select id="getOwnRoleByUserId" resultMap="BaseResultMap" parameterType="int">
+        select r.*
+        from role r,
+             user u,
+             user_role ur
+        where u.id = ur.user_id
+          and r.id = ur.rol_id
+          and u.id = #{userid}
+          and role_status &lt;&gt; -1
+    </select>
+
+
+    <!--void deleteRoleById(int id);
+
+    int giveRole(int id, List<Integer> list);-->
+
+    <delete id="deleteRoleById" parameterType="int">
+
+        delete
+        from user_role
+        where user_id = #{id}
+    </delete>
+
+    <insert id="giveRole" keyProperty="id">
+        insert into user_role(user_id,rol_id)
+        values
+        <foreach item="list" index="index" collection="list" separator=",">
+            (#{id},#{list})
+        </foreach>
+    </insert>
 
 </mapper>

@@ -3,18 +3,18 @@
 <mapper namespace="cn.soft.job.sys.mapper.UserMapper">
 
     <resultMap type="cn.soft.job.sys.pojo.po.User" id="BaseResultMap">
-        <id column="id" jdbcType="INTEGER" property="id" />
-        <result column="user_name" jdbcType="VARCHAR" property="userName" />
-        <result column="real_name" jdbcType="VARCHAR" property="realName" />
-        <result column="user_password" jdbcType="VARCHAR" property="userPassword" />
-        <result column="phone" jdbcType="VARCHAR" property="phone" />
-        <result column="email" jdbcType="VARCHAR" property="email" />
-        <result column="address" jdbcType="VARCHAR" property="address" />
-        <result column="gender" jdbcType="INTEGER" property="gender" />
-        <result column="remark" jdbcType="VARCHAR" property="remark" />
-        <result column="create_date" jdbcType="DATE" property="createDate" />
-        <result column="update_date" jdbcType="DATE" property="updateDate" />
-        <result column="user_status" jdbcType="INTEGER" property="userStatus" />
+        <id column="id" jdbcType="INTEGER" property="id"/>
+        <result column="user_name" jdbcType="VARCHAR" property="userName"/>
+        <result column="real_name" jdbcType="VARCHAR" property="realName"/>
+        <result column="user_password" jdbcType="VARCHAR" property="userPassword"/>
+        <result column="phone" jdbcType="VARCHAR" property="phone"/>
+        <result column="email" jdbcType="VARCHAR" property="email"/>
+        <result column="address" jdbcType="VARCHAR" property="address"/>
+        <result column="gender" jdbcType="INTEGER" property="gender"/>
+        <result column="remark" jdbcType="VARCHAR" property="remark"/>
+        <result column="create_date" jdbcType="TIMESTAMP" property="createDate"/>
+        <result column="update_date" jdbcType="TIMESTAMP" property="updateDate"/>
+        <result column="user_status" jdbcType="INTEGER" property="userStatus"/>
     </resultMap>
 
     <sql id="Base_Column_List">
@@ -71,5 +71,100 @@
         </set>
         where id = #{id,jdbcType=INTEGER}
     </update>
+
+    <!--int getCount(UserQueryVo userQueryVo);-->
+    <select id="getCount" resultType="int">
+        select count(u.id)
+        from user u
+        where u.user_status &lt;&gt; -1
+    </select>
+
+    <!--List<User> selectByExample(UserQueryVo userQueryVo);-->
+    <select id="selectByExample" parameterType="cn.soft.job.sys.pojo.vo.UserQueryVo" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List"/>
+        from user
+        where user_status &lt;&gt; -1
+        order by id desc
+        limit #{iDisplayStart},#{iDisplayLength}
+    </select>
+
+    <!-- User selectByPrimiary(int id);-->
+    <select id="selectByPrimiary" parameterType="int" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List"/>
+        from user
+        where id = #{id,jdbcType=INTEGER};
+    </select>
+
+    <!--int getUserNumber(Map<String, Object> paramsMap);
+
+    int insert(User user);-->
+
+    <select id="getUserNumber" parameterType="java.util.Map" resultType="int">
+        select count(id)
+        from user
+        where user_name = #{userName,jdbcType=VARCHAR}
+        and user.user_status &lt;&gt; -1
+        <if test="op != null and op != '' and op == 'modify'">
+            and id &lt;&gt; #{id,jdbcType=INTEGER}
+        </if>
+    </select>
+
+    <insert id="insert" parameterType="cn.soft.job.sys.pojo.po.User">
+        insert into user (id,
+                          user_name,
+                          real_name,
+                          user_password,
+                          gender,
+                          phone,
+                          email,
+                          address,
+                          remark,
+                          create_date,
+                          update_date,
+                          user_status)
+        values (#{id,jdbcType=INTEGER},
+                #{userName,jdbcType=VARCHAR},
+                #{realName,jdbcType=VARCHAR},
+                #{userPassword,jdbcType=VARCHAR},
+                #{gender,jdbcType=VARCHAR},
+                #{phone,jdbcType=VARCHAR},
+                #{email,jdbcType=VARCHAR},
+                #{address,jdbcType=VARCHAR},
+                #{remark,jdbcType=VARCHAR},
+                #{createDate,jdbcType=TIMESTAMP},
+                #{updateDate,jdbcType=TIMESTAMP},
+                #{userStatus,jdbcType=INTEGER})
+    </insert>
+
+    <!-- int deleteByPrimiary(int id);
+
+    int updateUserStatus(int id);
+
+    int batchDeleteUsers(String ids);-->
+
+    <delete id="deleteByPrimiary" parameterType="int">
+        delete
+        from user
+        where id = #{id,jdbcType=INTEGER}
+    </delete>
+
+    <update id="updateUserStatus" parameterType="int">
+        update  user
+        set user_status = 1 - user_status
+        where id = #{id,jdbcType=INTEGER}
+    </update>
+
+    <!-- 批量删除用户信息-->
+    <delete id="batchDeleteUsers" >
+        delete
+        from user
+        where id in
+        <foreach item="idArr" index="index" collection="array" open="("
+                 separator="," close=")">
+            #{idArr}
+        </foreach>
+    </delete>
 
 </mapper>

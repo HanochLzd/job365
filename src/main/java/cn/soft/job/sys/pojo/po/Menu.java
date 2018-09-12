@@ -1,8 +1,13 @@
 package cn.soft.job.sys.pojo.po;
 
+import java.io.Serializable;
 import java.util.List;
 
-public class Menu {
+/**
+ * @author Hanoch
+ */
+public class Menu implements Serializable {
+
     private Integer id;
 
     private String menuName;

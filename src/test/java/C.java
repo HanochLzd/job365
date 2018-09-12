@@ -1,3 +1,4 @@
+import cn.soft.job.sys.pojo.po.User;
 import org.junit.Test;
 
 /**
@@ -7,10 +8,33 @@ import org.junit.Test;
  */
 public class C implements B {
 
+    private String username;
 
-    @Test
-    public void test1(){
-        C c = new C();
-        System.out.println("["+c.queryList()+"]");
+//    public void test1() {
+//        C c = new C();
+//        System.out.println("[" + c.queryList() + "]");
+//    }
+
+
+    public String get() {
+        return "";
+    }
+
+    public void get(int i) {
+    }
+
+    public void find(Object o) {
+        System.out.println("Object");
+    }
+
+    public void find(String string) {
+        System.out.println("String");
+    }
+
+    public C() {
+    }
+
+    public C(String username) {
+        this.username = username;
     }
 }

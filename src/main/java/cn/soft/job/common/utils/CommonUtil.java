@@ -59,7 +59,7 @@ public class CommonUtil {
      * @return
      */
     public static Map<String, Object> checkUpdate(int oper) {
-        Map<String, Object> resMap = new HashMap<String, Object>();
+        Map<String, Object> resMap = new HashMap<>(16);
         if (oper > 0) {
             resMap.put(Constants.RESULT_CODE, Constants.RESULT_SUCCESS_FLAG);
             resMap.put(Constants.RESULT_MSG, Constants.UPDATE_SUCCESS_MSG);

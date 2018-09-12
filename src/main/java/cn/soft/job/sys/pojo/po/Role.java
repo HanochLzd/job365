@@ -49,6 +49,9 @@ public class Role {
         this.status = status;
     }
 
+    public Role() {
+    }
+
     public Role(Integer id, String roleName, String roleDesc, Date createDate,
                 Integer status) {
         this.id = id;
