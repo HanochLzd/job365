@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace="cn.soft.job.web.mapper.MessageMapper">
+	<resultMap type="cn.soft.job.web.pojo.po.Message"
+		id="BaseResultMap">
+		<result property="id" column="position_id" javaType="Integer"
+			jdbcType="BIGINT" />
+		<result property="parentId" column="parentId"
+			javaType="Integer" jdbcType="BIGINT" />
+		<result property="context" column="context" javaType="String"
+			jdbcType="VARCHAR" />
+
+		<result property="userId" column="userId" javaType="Integer"
+			jdbcType="BIGINT" />
+
+		<result property="positionId" column="positionId"
+			javaType="Integer" jdbcType="BIGINT" />
+
+		<result property="createDate" column="createDate"
+			javaType="DATE" jdbcType="DATE" />
+
+		<result property="comCreateDate" column="comCreateDate"
+			javaType="DATE" jdbcType="DATE" />
+
+		<result property="comContext" column="comContext"
+			javaType="String" jdbcType="VARCHAR" />
+		<result property="status" column="status" javaType="int"
+			jdbcType="BIGINT" />
+	</resultMap>
+
+
+	<!-- 获取列表 -->
+	<select id="getMessageList" parameterType="java.util.Map"
+		resultType="java.util.Map">
+
+		SELECT m.id
+		,m.parentId,m.context,m.userId,m.positionId,m.createDate,m.status,m.comCreateDate,m.comContext,c.company_name
+		companyName,p.position_name positionName,u.user_name userName
+		from
+		message m,company c,position p,user u
+		where m.status &lt;&gt; -1
+		and
+		c.id=p.company_id and p.position_id=m.positionId
+		and u.id=m.userId
+		<if
+			test="startDate != null and startDate != '' and endDate != null and endDate != ''">
+			and createDate &gt;= #{startDate}
+			and createDate &lt;= #{endDate}
+		</if>
+		<if test="roleID == 2">
+			and c.create_user_id=#{userID}
+		</if>
+		<if test="roleID == 3">
+			and m.userId=#{userID}
+		</if>
+		order by createDate desc
+		LIMIT #{start}, #{limit}
+
+
+	</select>
+
+	<!-- 获取总记录条数 -->
+	<select id="getCount" parameterType="java.util.Map"
+		resultType="int">
+		SELECT COUNT(*)
+		from
+		message m,company c,position p,user u
+		where m.status
+		&lt;&gt; -1
+		and
+		c.id=p.company_id and p.position_id=m.positionId
+		and
+		u.id=m.userId
+		<if
+			test="startDate != null and startDate != '' and endDate != null and endDate != ''">
+			and createDate &gt;= #{startDate}
+			and createDate &lt;= #{endDate}
+		</if>
+		<if test="roleID == 2">
+			and c.create_user_id=#{userID}
+		</if>
+		<if test="roleID == 3">
+			and m.userId=#{userID}
+		</if>
+	</select>
+
+
+	<insert id="insert"
+		parameterType="cn.soft.job.web.pojo.po.Message">
+		insert into message (id, parentId, context,
+		userId,positionId,createDate
+		,status,comCreateDate,comContext)
+		values
+		(#{id,jdbcType=INTEGER},#{parentId,jdbcType=INTEGER},#{context,jdbcType=VARCHAR},
+		#{userId,jdbcType=INTEGER},#{positionId,jdbcType=INTEGER},
+		#{createDate,jdbcType=TIMESTAMP},
+		#{status,jdbcType=BIGINT},#{comCreateDate,jdbcType=TIMESTAMP},#{comContext,jdbcType=VARCHAR})
+
+	</insert>
+
+</mapper>

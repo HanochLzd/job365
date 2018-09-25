@@ -14,9 +14,19 @@ public interface RoleMapper {
 
     List<Role> getAllRole();
 
-    List<Role> getOwnRoleByUserId(int userid);
+    List<Role> getOwnRoleByUserId(long userid);
 
     void deleteRoleById(int id);
 
     int giveRole(@Param("id") int id, @Param("list") List<Integer> list);
+
+    Role findRoleById(int roleId);
+
+    int addRole(Role role);
+
+    int updateRole(Role role);
+
+    int deleteByPrimiary(int id);
+
+    int deleteRoleMenuByRoleId(int id);
 }

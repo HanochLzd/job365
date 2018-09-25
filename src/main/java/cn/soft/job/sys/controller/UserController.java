@@ -87,7 +87,6 @@ public class UserController extends BaseController {
         ModelAndView view = new ModelAndView();
         //根据主键获得用户对象
         User user = userService.selectByPrimiary(id);
-        System.out.println(user);
         view.addObject("user", user);
         view.addObject("op", Constants.OP_MODIFY);
         view.setViewName("sys/user/user_add");

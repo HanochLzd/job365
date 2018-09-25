@@ -14,9 +14,9 @@ public class Menu implements Serializable {
 
     private String menuUrl;
 
-    private Integer parentid;
+    private Integer parentId;
 
-    private Integer menutype;
+    private Integer menuType;
 
     private String menuDesc;
 
@@ -29,13 +29,12 @@ public class Menu implements Serializable {
     public Menu() {
     }
 
-    public Menu(Integer id, String menuName, String menuUrl, Integer parentid, Integer menutype,
-                String menuDesc, String menuIcon, Integer menuStatus, List<Menu> childMenus) {
+    public Menu(Integer id, String menuName, String menuUrl, Integer parentId, Integer menuType, String menuDesc, String menuIcon, Integer menuStatus, List<Menu> childMenus) {
         this.id = id;
         this.menuName = menuName;
         this.menuUrl = menuUrl;
-        this.parentid = parentid;
-        this.menutype = menutype;
+        this.parentId = parentId;
+        this.menuType = menuType;
         this.menuDesc = menuDesc;
         this.menuIcon = menuIcon;
         this.menuStatus = menuStatus;
@@ -55,7 +54,7 @@ public class Menu implements Serializable {
     }
 
     public void setMenuName(String menuName) {
-        this.menuName = menuName == null ? null : menuName.trim();
+        this.menuName = menuName;
     }
 
     public String getMenuUrl() {
@@ -63,23 +62,23 @@ public class Menu implements Serializable {
     }
 
     public void setMenuUrl(String menuUrl) {
-        this.menuUrl = menuUrl == null ? null : menuUrl.trim();
+        this.menuUrl = menuUrl;
     }
 
-    public Integer getParentid() {
-        return parentid;
+    public Integer getParentId() {
+        return parentId;
     }
 
-    public void setParentid(Integer parentid) {
-        this.parentid = parentid;
+    public void setParentId(Integer parentId) {
+        this.parentId = parentId;
     }
 
-    public Integer getMenutype() {
-        return menutype;
+    public Integer getMenuType() {
+        return menuType;
     }
 
-    public void setMenutype(Integer menutype) {
-        this.menutype = menutype;
+    public void setMenuType(Integer menuType) {
+        this.menuType = menuType;
     }
 
     public String getMenuDesc() {
@@ -87,7 +86,7 @@ public class Menu implements Serializable {
     }
 
     public void setMenuDesc(String menuDesc) {
-        this.menuDesc = menuDesc == null ? null : menuDesc.trim();
+        this.menuDesc = menuDesc;
     }
 
     public String getMenuIcon() {
@@ -95,7 +94,7 @@ public class Menu implements Serializable {
     }
 
     public void setMenuIcon(String menuIcon) {
-        this.menuIcon = menuIcon == null ? null : menuIcon.trim();
+        this.menuIcon = menuIcon;
     }
 
     public Integer getMenuStatus() {
@@ -120,12 +119,13 @@ public class Menu implements Serializable {
                 "id=" + id +
                 ", menuName='" + menuName + '\'' +
                 ", menuUrl='" + menuUrl + '\'' +
-                ", parentid=" + parentid +
-                ", menutype=" + menutype +
+                ", parentId=" + parentId +
+                ", menuType=" + menuType +
                 ", menuDesc='" + menuDesc + '\'' +
                 ", menuIcon='" + menuIcon + '\'' +
                 ", menuStatus=" + menuStatus +
                 ", childMenus=" + childMenus +
                 '}';
     }
+
 }

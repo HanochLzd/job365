@@ -15,4 +15,11 @@ public interface RoleService {
 
     List<Role> getOwnRoleById(int userid);
 
+    Role findRoleById(int roleId);
+
+    int addRole(Role role);
+
+    int updateRole(Role role);
+
+    int deleteByPrimiary(int id);
 }

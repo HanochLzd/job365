@@ -5,13 +5,13 @@
 
     <resultMap type="cn.soft.job.sys.pojo.po.Menu" id="BaseResultMap">
         <result property="id" column="id" javaType="int" jdbcType="INTEGER"/>
-        <result property="parentid" column="parent_id" javaType="int" jdbcType="INTEGER"/>
+        <result property="parentId" column="parentId" javaType="int" jdbcType="INTEGER"/>
         <result property="menuName" column="menu_name" javaType="string" jdbcType="VARCHAR"/>
         <result property="menuUrl" column="menu_url" javaType="string" jdbcType="VARCHAR"/>
         <result property="menuIcon" column="menu_icon" javaType="string" jdbcType="VARCHAR"/>
         <result property="menuDesc" column="menu_desc" javaType="string" jdbcType="VARCHAR"/>
         <result property="menuType" column="menuType" javaType="int" jdbcType="INTEGER"/>
-        <result property="status" column="menu_status" javaType="int" jdbcType="INTEGER"/>
+        <result property="menuStatus" column="menu_status" javaType="int" jdbcType="INTEGER"/>
     </resultMap>
 
     <resultMap type="cn.soft.job.sys.pojo.po.Menu" id="SysMenusMap" extends="BaseResultMap">
@@ -53,6 +53,135 @@
           and u.id = #{userId}
           and m.parentId = #{menuId}
     </select>
+
+    <!-- List<Menu> getAllMenuList();-->
+    <select id="getAllMenuList" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List"/>
+        from menu
+        where menu_status &lt;&gt; -1
+        order by id desc
+    </select>
+
+    <!--List<Menu> selectByMenuName(String menuName);-->
+    <select id="selectByMenuName" parameterType="String" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List"/>
+        from menu
+        <where>
+            menu_status &lt;&gt; -1
+            <if test=" menuName != '' or menuName != null">
+                and menu_name LIKE CONCAT(CONCAT('%', #{menuName}), '%')
+            </if>
+        </where>
+        order by id desc
+    </select>
+
+    <!-- int deleteByPrimiary(int id);-->
+    <delete id="deleteByPrimiary" parameterType="int">
+        delete
+        from menu
+        where id = #{id}
+    </delete>
+
+    <!-- int batchDeleteMenu(String[] id);-->
+    <delete id="batchDeleteMenu">
+        delete
+        from menu
+        where id in
+        <foreach item="id" index="index" collection="array" open="("
+                 separator="," close=")">
+            #{id}
+        </foreach>
+    </delete>
+
+    <!--Menu findMenuById(int menuId);-->
+    <select id="findMenuById" parameterType="int" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List"/>
+        from menu
+        where menu_status &lt;&gt; -1 and id=#{menuId}
+        order by id desc
+    </select>
+
+    <!--int updateMenuById(Menu menu);
+
+    int findMenuByName(String menuName);
+
+    int insert(Menu menu);-->
+
+    <update id="updateMenuById" parameterType="cn.soft.job.sys.pojo.po.Menu">
+        update menu
+        <set>
+            <if test="menuName != null">
+                menu_name = #{menuName,jdbcType=VARCHAR},
+            </if>
+            <if test="menuUrl != null">
+                menu_url = #{menuUrl,jdbcType=VARCHAR},
+            </if>
+            <if test="parentId != null">
+                parentId = #{parentId,jdbcType=VARCHAR},
+            </if>
+            <if test="menuType != null">
+                menuType = #{menuType,jdbcType=VARCHAR},
+            </if>
+            <if test=" menuDesc!= null">
+                menu_desc = #{menuDesc,jdbcType=VARCHAR},
+            </if>
+
+            <if test="menuIcon!=null">
+                menu_icon = #{menuIcon,jdbcType=VARCHAR},
+            </if>
+
+            <if test="status!=null">
+                menu_status = #{status,jdbcType=VARCHAR},
+            </if>
+
+        </set>
+        where id = #{menuId,jdbcType=BIGINT}
+    </update>
+
+    <select id="findMenuByName" parameterType="String" resultType="int">
+        select count(id)
+        from menu
+        where menu_status &lt;&gt; -1
+          and menu_name = #{menuName}
+        order by id desc
+    </select>
+
+
+    <insert id="insert" parameterType="cn.soft.job.sys.pojo.po.Menu" keyProperty="id" useGeneratedKeys="true">
+        insert into menu (parentId, menu_name, menu_url, menu_icon, menu_desc, menuType, menu_status)
+        values (#{parentId}, #{menuName}, #{menuUrl}, #{menuIcon}, #{menuDesc}, #{menuType}, #{menuStatus})
+    </insert>
+
+    <!-- List<Menu> getOwnMenuById(int id);-->
+    <select id="getOwnMenuById" parameterType="int" resultMap="BaseResultMap">
+        select m.*
+        from menu m,
+             role r,
+             role_menu rm
+        where rm.menu_id = m.id
+          and rm.role_id = r.id
+          and r.id = #{id}
+    </select>
+
+    <!--void deleteMenuById(int id);
+
+    int giveMenu(int id, List<Integer> list);-->
+    <delete id="deleteMenuById">
+        delete
+        from role_menu
+        where role_id = #{id}
+    </delete>
+
+    <insert id="giveMenu" keyProperty="id" useGeneratedKeys="true">
+        insert into role_menu(role_id,menu_id)
+        values
+        <foreach item="list" index="index" collection="list" separator=",">
+            (#{id},#{list})
+        </foreach>
+    </insert>
 
 
 </mapper>

@@ -54,4 +54,53 @@
         </foreach>
     </insert>
 
+    <!--Role findRoleById(int roleId);-->
+    <select id="findRoleById" parameterType="int" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List"/>
+        from role
+        where role_status &lt;&gt; -1 and id=#{roleId}
+        order by id desc
+    </select>
+
+    <!-- int addRole(Role role);-->
+    <insert id="addRole" parameterType="cn.soft.job.sys.pojo.po.Role" keyProperty="id" useGeneratedKeys="true">
+        insert into role (role_name, role_desc, create_date, role_status)
+        values (#{roleName}, #{roleDesc}, #{createDate}, #{status})
+    </insert>
+
+    <!-- int updateRole(Role role);-->
+    <update id="updateRole" parameterType="cn.soft.job.sys.pojo.po.Role">
+        update role
+        <set>
+
+            <if test="roleName != null">
+                role_name = #{roleName,jdbcType=VARCHAR},
+            </if>
+            <if test="roleDesc != null">
+                role_desc = #{roleDesc,jdbcType=VARCHAR},
+            </if>
+            <if test="createDate != null">
+                create_date = #{createDate,jdbcType=DATE},
+            </if>
+            <if test="status != null">
+                role_status = #{status,jdbcType=VARCHAR},
+            </if>
+        </set>
+        where id = #{id,jdbcType=BIGINT}
+    </update>
+
+
+    <delete id="deleteByPrimiary" parameterType="int">
+        delete
+        from role
+        where id = #{id}
+    </delete>
+
+    <!--int deleteRoleMenuByRoleId(int id);-->
+    <delete id="deleteRoleMenuByRoleId" parameterType="int">
+        delete
+        from role_menu
+        where role_id = #{id}
+    </delete>
 </mapper>

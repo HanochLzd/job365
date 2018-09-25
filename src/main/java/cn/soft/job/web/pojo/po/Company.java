@@ -145,6 +145,4 @@ public class Company {
                 + ", companyCreateDate=" + companyCreateDate + ", companyPerson=" + companyPerson + ", companyLogo="
                 + companyLogo + "]";
     }
-
-
 }

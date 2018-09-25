@@ -27,4 +27,29 @@ public interface MenuService {
      * @return list
      */
     List<Menu> getAllChlidMenu(Long userid, Integer menuId);
+
+    /**
+     * 查询所有菜单
+     *
+     * @return
+     */
+    List<Menu> getAllMenuList();
+
+    List<Menu> getMenuListByMenuName(String menuName);
+
+    int deleteByPrimiary(int id);
+
+    int batchDeleteMenu(String ids);
+
+    Menu findMenuById(int menuId);
+
+    int updateMenuById(Menu menu);
+
+    int findMenuByName(String menuName);
+
+    int insert(Menu menu);
+
+    List<Menu> getOwnMenuById(int id);
+
+    int giveMenu(int id, String menuIds);
 }

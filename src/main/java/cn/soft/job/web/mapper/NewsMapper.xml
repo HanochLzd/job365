@@ -1,0 +1,297 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="cn.soft.job.web.mapper.NewsMapper">
+	<resultMap id="BaseResultMap"
+		type="cn.soft.job.web.pojo.po.News">
+		<id column="id" property="id" jdbcType="BIGINT" />
+		<result column="create_user_id" property="createUserId"
+			jdbcType="BIGINT" />
+		<result column="news_title" property="newsTitle"
+			jdbcType="VARCHAR" />
+		<result column="push_date" property="pushDate"
+			jdbcType="TIMESTAMP" />
+		<result column="create_date" property="createDate"
+			jdbcType="TIMESTAMP" />
+		<result column="update_date" property="updateDate"
+			jdbcType="TIMESTAMP" />
+		<result column="news_status" property="newsStatus"
+			jdbcType="VARCHAR" />
+		<result column="remark" property="remark" jdbcType="VARCHAR" />
+		<result column="is_show_top" property="isShowTop"
+			jdbcType="VARCHAR" />
+		<result column="image_path" property="imagePath"
+			jdbcType="VARCHAR" />
+		<result column="news_content" property="newsContent"
+			jdbcType="VARCHAR" />
+	</resultMap>
+	<resultMap id="ResultMapWithBLOBs"
+		type="cn.soft.job.web.pojo.po.News" extends="BaseResultMap">
+		<result column="news_content" property="newsContent"
+			jdbcType="LONGVARCHAR" />
+	</resultMap>
+	<sql id="Base_Column_List">
+		id, create_user_id, news_title, push_date, create_date,
+		update_date,news_content, news_status,remark,is_show_top,image_path
+	</sql>
+
+
+
+
+
+
+	<!-- 获取列表 -->
+	<select id="getList" resultType="java.util.Map"
+		parameterType="java.util.Map">
+		select
+		id as id,
+		create_user_id as createUserId,
+		news_title as newsTitle,
+		push_date as pushDate,
+		create_date as createDate,
+		update_date as
+		updateDate,
+		news_status as newsStatus,
+		LEFT(remark,15) as remark,
+		is_show_top as isShowTop,
+		image_path as imagePath,
+		news_content as
+		newsContent,
+		(select u.user_name from
+		user u
+		where u.id=create_user_id)
+		createUser
+		from news where news_status &lt;&gt; -1
+
+		<if test="newsTitle != null and newsTitle != '' ">
+			and news_title = #{newsTitle}
+		</if>
+		<if
+			test="startDate != null and startDate != '' and endDate != null and endDate != ''">
+			and push_date &gt;= #{startDate}
+			and push_date &lt;= #{endDate}
+		</if>
+		<if test="userID != 1">
+			and create_user_id = #{userID}
+		</if>
+		order by create_date desc
+		LIMIT #{start}, #{limit}
+
+
+	</select>
+
+	<!-- 获取总记录条数 -->
+	<select id="getCount" parameterType="java.util.Map"
+		resultType="int">
+		SELECT COUNT(*)
+		from news where news_status &lt;&gt; -1
+
+		<if test="newsTitle != null and newsTitle != '' ">
+			and news_title = #{newsTitle}
+		</if>
+		<if
+			test="startDate != null and startDate != '' and endDate != null and endDate != ''">
+			and push_date &gt;= #{startDate}
+			and push_date &lt;= #{endDate}
+		</if>
+		<if test="userID != 1">
+			and create_user_id = #{userID}
+		</if>
+
+	</select>
+
+	<!-- 查询 -->
+	<select id="selectByPrimaryKey" resultMap="ResultMapWithBLOBs"
+		parameterType="java.lang.Long">
+		select
+		<include refid="Base_Column_List" />
+
+		from news
+		where id = #{id,jdbcType=BIGINT}
+	</select>
+
+	<!-- 删除 -->
+	<delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+		delete from news
+		where id = #{id,jdbcType=BIGINT}
+	</delete>
+
+	<!-- 伪 批量删除新闻记录 -->
+	<!-- <update id="deleteBatch" parameterType="com.wang.web.entities.News"> 
+		update news set news_status=-1 where id in <foreach item="ids" index="index" 
+		collection="array" open="(" separator="," close=")"> #{ids} </foreach> </update> -->
+
+	<!-- 添加 -->
+	<insert id="insert" parameterType="cn.soft.job.web.pojo.po.News">
+		insert into news (id,
+		create_user_id, news_title,
+		push_date, create_date, update_date,
+		news_status, remark, is_show_top,image_path,
+		news_content)
+		values
+		(#{id,jdbcType=BIGINT}, #{createUserId,jdbcType=BIGINT},
+		#{newsTitle,jdbcType=VARCHAR},
+		#{pushDate,jdbcType=TIMESTAMP},
+		#{createDate,jdbcType=TIMESTAMP}, #{updateDate,jdbcType=TIMESTAMP},
+		#{newsStatus,jdbcType=VARCHAR}, #{remark,jdbcType=VARCHAR},
+		#{isShowTop,jdbcType=VARCHAR},
+		#{imagePath,jdbcType=VARCHAR},
+		#{newsContent,jdbcType=LONGVARCHAR})
+	</insert>
+
+	<!-- 修改 -->
+	<update id="updateByPrimaryKeySelective"
+		parameterType="cn.soft.job.web.pojo.po.News">
+		update news
+		<set>
+			<if test="createUserId != null">
+				create_user_id = #{createUserId,jdbcType=BIGINT},
+			</if>
+			<if test="newsTitle != null">
+				news_title = #{newsTitle,jdbcType=VARCHAR},
+			</if>
+			<if test="pushDate != null">
+				push_date = #{pushDate,jdbcType=TIMESTAMP},
+			</if>
+			<if test="createDate != null">
+				create_date = #{createDate,jdbcType=TIMESTAMP},
+			</if>
+			<if test="updateDate != null">
+				update_date = #{updateDate,jdbcType=TIMESTAMP},
+			</if>
+			<if test="newsStatus != null">
+				news_status = #{newsStatus,jdbcType=VARCHAR},
+			</if>
+			<if test="remark != null">
+				remark = #{remark,jdbcType=VARCHAR},
+			</if>
+			<if test="isShowTop != null">
+				is_show_top = #{isShowTop,jdbcType=VARCHAR},
+			</if>
+			<if test="imagePath != null">
+				image_path = #{imagePath,jdbcType=VARCHAR},
+			</if>
+			<if test="newsContent != null">
+				news_content = #{newsContent,jdbcType=LONGVARCHAR},
+			</if>
+		</set>
+		where id = #{id,jdbcType=BIGINT}
+	</update>
+
+	<update id="updateByPrimaryKey"
+		parameterType="cn.soft.job.web.pojo.po.News">
+		update news
+		set create_user_id =
+		#{createUserId,jdbcType=BIGINT},
+		news_title =
+		#{newsTitle,jdbcType=VARCHAR},
+		push_date =
+		#{pushDate,jdbcType=TIMESTAMP},
+		create_date =
+		#{createDate,jdbcType=TIMESTAMP},
+		update_date =
+		#{updateDate,jdbcType=TIMESTAMP},
+		news_status =
+		#{newsStatus,jdbcType=VARCHAR},
+		remark = #{remark,jdbcType=VARCHAR},
+		is_show_top = #{isShowTop,jdbcType=VARCHAR},
+		image_path =
+		#{imagePath,jdbcType=VARCHAR},
+		news_content =
+		#{newsContent,jdbcType=LONGVARCHAR}
+		where id = #{id,jdbcType=BIGINT}
+	</update>
+
+	<!-- 修改资讯状态 -->
+
+	<update id="updateStatusByPrimiary" parameterType="int">
+		update news
+		set news_status = 1
+		where id = #{id,jdbcType=INTEGER}
+	</update>
+
+
+	<!-- 资讯上架 -->
+	<update id="shangjia" parameterType="java.util.Map">
+		update news
+		set is_show_top =
+		1 , push_date = #{date, jdbcType=TIMESTAMP}
+		where id =
+		#{id,jdbcType=INTEGER}
+	</update>
+
+
+	<!-- 资讯下架 -->
+	<update id="xiajia" parameterType="int">
+		update news
+		set is_show_top = 0
+		where id = #{id,jdbcType=INTEGER}
+	</update>
+
+
+	<select id="selectByPrimiary" parameterType="int"
+		resultMap="BaseResultMap">
+		select
+		<include refid="Base_Column_List"></include>
+		from news
+		where id = #{id,jdbcType=INTEGER}
+	</select>
+
+
+	<!-- 删除单条记录 -->
+	<delete id="deleteByPrimiary" parameterType="int">
+		delete
+		from news
+		where id = #{id,jdbcType=INTEGER}
+	</delete>
+
+
+	<!-- 批量删除 -->
+	<delete id="deleteBatch">
+		delete from news
+		where id in
+		<foreach item="ids" index="index" collection="array" open="("
+			separator="," close=")">
+			#{ids}
+		</foreach>
+	</delete>
+
+
+	<!-- 获取总记录条数 -->
+	<select id="getPageList" resultType="java.util.Map">
+		select
+		id as id,
+		create_user_id as createUserId,
+		news_title as newsTitle,
+		push_date as
+		pushDate,
+		create_date as createDate,
+		update_date as updateDate,
+		news_status as newsStatus,
+		LEFT(remark,15) as remark,
+		is_show_top as
+		isShowTop,
+		image_path as imagePath,
+		news_content as newsContent,
+		(select
+		u.user_name from
+		user u
+		where u.id=create_user_id) createUser
+		from news
+		where news_status &lt;&gt; -1
+		order by create_date desc
+		LIMIT #{start},
+		#{limit}
+
+	</select>
+
+	<!-- 获取总记录条数 -->
+	<select id="getPagesCount" resultType="int">
+		SELECT COUNT(id)
+		from news
+		where news_status &lt;&gt; -1
+	</select>
+
+
+
+
+</mapper>

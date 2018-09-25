@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="cn.soft.job.web.mapper.CompanyMapper">
+    <resultMap type="cn.soft.job.web.pojo.po.Company" id="BaseResultMap">
+        <result property="id" column="id" javaType="Integer" jdbcType="BIGINT"/>
+        <result property="companyName" column="company_name" javaType="String"
+                jdbcType="VARCHAR"/>
+        <result property="userId" column="create_user_id" javaType="Integer"
+                jdbcType="BIGINT"/>
+        <result property="email" column="company_email" javaType="String"
+                jdbcType="VARCHAR"/>
+        <result property="address" column="company_address" javaType="String"
+                jdbcType="VARCHAR"/>
+        <result property="type" column="company_type" javaType="Integer"
+                jdbcType="BIGINT"/>
+        <result property="companyDesc" column="company_desc" javaType="String"
+                jdbcType="VARCHAR"/>
+        <result property="phone" column="company_phone" javaType="String"
+                jdbcType="VARCHAR"/>
+        <result property="companyCreateDate" column="company_create_date" javaType="Date"
+                jdbcType="DATE"/>
+        <result property="companyPerson" column="company_person" javaType="String"
+                jdbcType="VARCHAR"/>
+        <result property="companyLogo" column="company_logo" javaType="String"
+                jdbcType="VARCHAR"/>
+        <result property="createDate" column="create_date" javaType="Date"
+                jdbcType="TIMESTAMP"/>
+        <result property="updateDate" column="update_date" javaType="Date"
+                jdbcType="TIMESTAMP"/>
+        <result property="status" column="comapny_status" javaType="int"
+                jdbcType="BIGINT"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        id, company_name, create_user_id, company_email, company_address,
+        company_type, company_desc, company_phone, company_create_date,
+        company_person, company_logo, create_date, update_date, company_status
+    </sql>
+
+    <select id="getAllCompany" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List"></include>
+        from company
+        order by id desc
+
+    </select>
+
+
+    <!-- 获取总记录条数 -->
+    <select id="getCount" parameterType="java.util.Map" resultType="int">
+        SELECT COUNT(id)
+        from company where company_status &lt;&gt; -1
+        <if test="companyName != null and companyName != '' ">
+            and company_name = #{companyName}
+        </if>
+        <if test="startDate != null and startDate != '' and endDate != null and endDate != ''">
+            and create_date &gt;= #{startDate}
+            and create_date &lt;= #{endDate}
+        </if>
+
+    </select>
+
+
+    <select id="getList" resultType="java.util.Map" parameterType="java.util.Map">
+        select
+        id as id,
+        company_name as companyName,
+        create_user_id as userId ,
+        company_email as email,
+        company_address as address,
+        company_type as type,
+        company_desc as companyDesc,
+        company_phone as phone,
+        company_logo as companyLogo,
+        company_create_date as companyCreateDate,
+        create_date as createDate,
+        update_date as updateDate,
+        company_status as status
+
+        from company where company_status &lt;&gt; -1
+
+        <if test="companyName != null and name != '' ">
+            and company_name = #{companyName}
+        </if>
+        <if test="startDate != null and startDate != '' and endDate != null and endDate != ''">
+            and create_date &gt;= #{startDate}
+            and create_date &lt;= #{endDate}
+        </if>
+        order by create_date desc
+        LIMIT #{start}, #{limit}
+
+
+    </select>
+
+
+    <!-- 添加 -->
+    <insert id="insert" parameterType="cn.soft.job.web.pojo.po.Company">
+        insert into company (id,
+                             company_name,
+                             create_user_id,
+                             company_email,
+                             company_address,
+                             company_type,
+                             company_desc,
+                             company_phone,
+                             company_create_date,
+                             company_person,
+                             company_logo,
+                             create_date,
+                             update_date,
+                             company_status)
+        values (#{id,jdbcType=BIGINT},
+                #{companyName,jdbcType=BIGINT},
+                #{userId,jdbcType=BIGINT},
+                #{email,jdbcType=VARCHAR},
+                #{address,jdbcType=VARCHAR},
+                #{type,jdbcType=VARCHAR},
+                #{companyDesc,jdbcType=VARCHAR},
+                #{phone,jdbcType=VARCHAR},
+                #{companyCreateDate,jdbcType=TIMESTAMP},
+                #{companyPerson,jdbcType=VARCHAR},
+                #{companyLogo,jdbcType=VARCHAR},
+                #{createDate,jdbcType=TIMESTAMP},
+                #{updateDate,jdbcType=TIMESTAMP},
+                #{status,jdbcType=VARCHAR})
+    </insert>
+    <!-- 修改 -->
+    <update id="updateByPrimaryKeySelective" parameterType="cn.soft.job.web.pojo.po.Company">
+        update company
+        <set>
+            <if test="userId != null">
+                create_user_id = #{userId,jdbcType=BIGINT},
+            </if>
+            <if test="email != null">
+                company_email = #{email,jdbcType=VARCHAR},
+            </if>
+            <if test="address != null">
+                company_address = #{address,jdbcType=VARCHAR},
+            </if>
+            <if test="type != null">
+                company_type = #{type,jdbcType=VARCHAR},
+            </if>
+            <if test="companyDesc != null">
+                company_desc = #{companyDesc,jdbcType=VARCHAR},
+            </if>
+            <if test="phone != null">
+                company_phone = #{phone,jdbcType=VARCHAR},
+            </if>
+
+            <if test="companyCreateDate != null">
+                companyCreateDate = #{companyCreateDate,jdbcType=TIMESTAMP},
+            </if>
+
+            <if test="companyPerson != null">
+                company_person = #{companyPerson,jdbcType=VARCHAR},
+            </if>
+            <if test="companyLogo != null">
+                company_logo = #{companyLogo,jdbcType=VARCHAR},
+            </if>
+            <if test="createDate != null">
+                create_date = #{createDate,jdbcType=TIMESTAMP},
+            </if>
+            <if test="updateDate != null">
+                update_date = #{updateDate,jdbcType=TIMESTAMP},
+            </if>
+
+            <if test="status != null">
+                company_status = #{status,jdbcType=LONGVARCHAR},
+            </if>
+        </set>
+        where id = #{id,jdbcType=BIGINT}
+    </update>
+
+    <select id="selectByPrimiary" parameterType="int" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List"/>
+        from company
+        where id = #{id,jdbcType=INTEGER}
+    </select>
+
+    <!-- 删除单条记录 -->
+    <delete id="deleteByPrimiary" parameterType="int">
+        delete
+        from company
+        where id = #{id,jdbcType=INTEGER}
+    </delete>
+
+
+    <!-- 批量删除 -->
+    <delete id="deleteBatch">
+        delete from company
+        where id in
+        <foreach item="ids" index="index" collection="array" open="("
+                 separator="," close=")">
+            #{ids}
+        </foreach>
+    </delete>
+
+    <!-- 修改资讯状态 -->
+
+    <update id="updateStatusByPrimiary" parameterType="int">
+        update company
+        set company_status = 1
+        where id = #{id,jdbcType=INTEGER}
+    </update>
+
+
+</mapper>

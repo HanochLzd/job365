@@ -14,7 +14,7 @@
 <article class="page-container">
 	<form action="" method="post" class="form form-horizontal" id="form-admin-role-add">
 		
-		<input type="hidden" class="input-text" value="${menu.menuId }" placeholder="" id="menuId" name="menuId">
+		<input type="hidden" class="input-text" value="${menu.id }" placeholder="" id="menuId" name="menuId">
 		<input type="hidden" class="input-text" value="${op}" placeholder="" id="op" name="op">
 		<div class="row cl">
 			<label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>权限名称：</label>

@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace="cn.soft.job.web.mapper.UploadResumeMapper">
+	<resultMap type="cn.soft.job.web.pojo.po.UploadResume"
+		id="BaseResultMap">
+		<result property="id" column="id" javaType="long"
+			jdbcType="BIGINT" />
+		<result property="createUserId" column="create_user_id"
+			javaType="long" jdbcType="BIGINT" />
+		<result property="resumeName" column="resume_name"
+			javaType="string" jdbcType="VARCHAR" />
+		<result property="resumeDesc" column="resume_desc"
+			javaType="string" jdbcType="VARCHAR" />
+		<result property="resumeUrl" column="resume_url"
+			javaType="string" jdbcType="VARCHAR" />
+		<result property="status" column="status" javaType="string"
+			jdbcType="VARCHAR" />
+		<result property="createDate" column="create_date"
+			javaType="Date" jdbcType="TIMESTAMP" />
+		<result property="updateDate" column="update_date"
+			javaType="Date" jdbcType="TIMESTAMP" />
+		<result property="downloadNum" column="download_num"
+			javaType="long" jdbcType="BIGINT" />
+	</resultMap>
+
+	<sql id="Base_Column_List">
+		id,create_user_id,resume_name,resume_desc,resume_url,status,create_date,update_date,download_num
+	</sql>
+
+	<!-- 获取一条记录 -->
+	<select id="selectById" parameterType="int"
+		resultMap="BaseResultMap">
+		select
+		id as id,
+		create_user_id as createUserId,
+		resume_name as resumeName,
+		resume_url as resumeUrl,
+		resume_desc as resumeDesc,
+		status as status,
+		create_date as createDate,
+		update_date as updateDate,
+		download_num as downloadNum
+		from upload_resume
+		where id = #{id}
+	</select>
+
+	<!-- 获取总数 -->
+	<select id="getCount" parameterType="java.util.Map"
+		resultType="int">
+		select count(id)
+		from upload_resume d
+		where 1=1
+		<if test="resumeName != null and resumeName != '' ">
+			and d.resume_name like concat('%',#{resumeName},'%')
+		</if>
+		<if
+			test="startDate != null and startDate != '' and endDate != null and endDate != ''">
+			and d.update_date &gt;= #{startDate}
+			and d.update_date &lt;=
+			#{endDate}
+		</if>
+	</select>
+
+	<!-- 获取列表 -->
+	<select id="getDocList" parameterType="java.util.Map"
+		resultType="java.util.Map">
+		select
+		d.id as id,
+		d.resume_name as resumeName,
+		d.resume_desc as
+		resumeDesc,
+		d.create_date as createDate,
+		d.update_date as updateDate,
+		d.resume_url as resumeUrl,
+		d.status as status,
+		d.download_num as
+		downloadNum,
+		(select user_name from
+		user u
+		where u.id=d.create_user_id)
+		createUser
+		from
+		upload_resume d
+		WHERE
+		1=1
+		<if test="resumeName != null and resumeName != '' ">
+			<!-- and d.resume_name = #{resumeName} -->
+			and d.resume_name like concat('%',#{resumeName},'%')
+		</if>
+		<if
+			test="startDate != null and startDate != '' and endDate != null and endDate != ''">
+			and d.update_date &gt;= #{startDate}
+			and d.update_date &lt;=
+			#{endDate}
+		</if>
+		order by d.update_date desc
+		LIMIT #{start}, #{limit}
+	</select>
+
+
+	<!-- 添加信息 -->
+	<insert id="insert"
+		parameterType="cn.soft.job.web.pojo.po.UploadResume">
+		insert into upload_resume
+		(create_user_id,resume_name,resume_desc,resume_url,status,
+		create_date,update_date,download_num)
+		values (#{createUserId,jdbcType=BIGINT},#{resumeName,jdbcType=VARCHAR},
+		#{resumeDesc,jdbcType=VARCHAR},#{resumeUrl,jdbcType=VARCHAR},
+		#{status,jdbcType=VARCHAR},#{createDate,jdbcType=TIMESTAMP},
+		#{updateDate,jdbcType=TIMESTAMP},#{downloadNum,jdbcType=BIGINT})
+	</insert>
+
+	<!-- 删除视频信息，根据主键 -->
+	<delete id="delById" parameterType="int">
+		delete
+		from upload_resume
+		where id = #{id}
+	</delete>
+	<!-- 根据主键获取观看次数 -->
+	<select id="selectDownloadNum" parameterType="int"
+		resultType="int">
+		select d.download_num from upload_resume d
+		where d.id= #{id}
+	</select>
+
+	<update id="download" parameterType="java.util.Map">
+		update upload_resume d
+		set d.download_num = #{number}
+		where d.id =#{id}
+	</update>
+</mapper>

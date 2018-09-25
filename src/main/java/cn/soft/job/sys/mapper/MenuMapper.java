@@ -28,4 +28,26 @@ public interface MenuMapper {
      * @return menuList
      */
     List<Menu> getAllChlidMenu(@Param("userId") Long userid, @Param("menuId") Integer menuId);
+
+    List<Menu> getAllMenuList();
+
+    List<Menu> selectByMenuName(@Param("menuName") String menuName);
+
+    int deleteByPrimiary(int id);
+
+    int batchDeleteMenu(String[] id);
+
+    Menu findMenuById(int menuId);
+
+    int updateMenuById(Menu menu);
+
+    int findMenuByName(String menuName);
+
+    int insert(Menu menu);
+
+    List<Menu> getOwnMenuById(int id);
+
+    void deleteMenuById(int id);
+
+    int giveMenu(@Param("id") int id, @Param("list") List<Integer> list);
 }
