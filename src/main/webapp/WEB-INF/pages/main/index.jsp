@@ -51,7 +51,7 @@
                             class="Hui-iconfont">&#xe6d5;</i></a>
                         <ul class="dropDown-menu menu radius box-shadow">
                             <li><a href="javascript:;" onclick="changePassword()">修改密码</a></li>
-                            <li><a href="javascript:;" onclick="doorManage()">门户管理</a></li>
+                            <li><a href="#" >门户管理</a></li>
                             <li><a href="javascript:;" onclick="logout()">切换账户</a></li>
                             <li><a href="javascript:;" onclick="logout()">退出</a></li>
                         </ul>

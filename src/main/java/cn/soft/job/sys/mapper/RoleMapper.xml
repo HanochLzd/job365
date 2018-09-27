@@ -103,4 +103,13 @@
         from role_menu
         where role_id = #{id}
     </delete>
+
+    <!--void giveOneRole(Long id, int i);-->
+    <insert id="giveOneRole" keyProperty="id" useGeneratedKeys="true">
+
+        insert into user_role (user_id, rol_id)
+        values (#{userId}, #{roleId})
+
+    </insert>
+
 </mapper>

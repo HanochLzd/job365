@@ -5,9 +5,12 @@ import cn.soft.job.common.utils.Constants;
 import cn.soft.job.common.utils.DateUtil;
 import cn.soft.job.common.utils.MD5Util;
 import cn.soft.job.sys.controller.base.BaseController;
+import cn.soft.job.sys.mapper.RoleMapper;
 import cn.soft.job.sys.pojo.po.Menu;
+import cn.soft.job.sys.pojo.po.Role;
 import cn.soft.job.sys.pojo.po.User;
 import cn.soft.job.sys.service.MenuService;
+import cn.soft.job.sys.service.RoleService;
 import cn.soft.job.sys.service.UserService;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,6 +22,7 @@ import javax.servlet.http.HttpSession;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.regex.Pattern;
 
 /**
  * @author Hanoch
@@ -36,6 +40,9 @@ public class UserLoginController extends BaseController {
 
     @Autowired
     private MenuService menuService;
+
+    @Autowired
+    private RoleService roleService;
 
     @RequestMapping("/doRegister")
     public ModelAndView doregister() {
@@ -88,6 +95,82 @@ public class UserLoginController extends BaseController {
     }
 
     /**
+     * 注册
+     *
+     * @param userName userName
+     * @param password password
+     * @param checkPwd checkPwd
+     * @param usertype usertype
+     */
+    @RequestMapping("/register")
+    public void register(String userName, String password, String checkPwd, String usertype) {
+        logger.info("处理用户注册请求...");
+        System.out.println("uType:" + usertype);
+        Map<String, Object> resultMap = new HashMap<>(16);
+        //判断用户名和密码是否为空
+        User user = new User();
+        user.setRealName(userName);
+        user.setUserName(userName);
+        user.setUserPassword(password);
+        user.setUserStatus(1);
+
+        //String regexUserName = "/^[a-zA-Z\u4e00-\u9fa5][a-zA-Z0-9_\u4E00-\u9FA5]{5,15}$/";
+        // 昵称格式：限16个字符，支持中英文、数字、减号或下划线
+        String regexUserName = "^[\\u4e00-\\u9fa5_a-zA-Z0-9-]{3,16}$";
+        boolean matchesUserName = Pattern.matches(regexUserName, userName);
+        System.out.println(matchesUserName);
+        // 6-20 位，字母、数字、字符
+        String regexPassword = "^([A-Z]|[a-z]|[0-9]|[`~!@#$%^&*()+=|{}':;',\\\\[\\\\].<>/?~！@#￥%……&*（）——+|{}【】‘；：”“’。，、？]){6,20}$";
+        boolean matchesPassword = Pattern.matches(regexPassword, checkPwd);
+
+
+        System.out.println(matchesPassword);
+        if (CommonUtil.isNull(userName) || CommonUtil.isNull(password)) {
+            resultMap.put("msg", "用户名或密码不能为空!");
+            resultMap.put("status", false);
+        } else {
+            if (!matchesUserName) {
+                resultMap.put("msg", "用户名格式错误!");
+                resultMap.put("status", false);
+
+            } else {
+                if (!matchesPassword) {
+                    resultMap.put("msg", "密码格式错误!");
+                    resultMap.put("status", false);
+                } else {
+                    if (!password.equals(checkPwd)) {
+                        resultMap.put("msg", "两密码不一致！");
+                        resultMap.put("status", false);
+                    } else {
+                        String MD5pwd = MD5Util.getMD5(password);
+                        user.setUserPassword(MD5pwd);
+                        userService.insert(user);
+
+                        User user2 = userService.selectByUserName(userName);
+                        Integer userType = Integer.parseInt(usertype);
+                        System.out.println("user2的Id————————》" + user2.getId());
+                        try {
+                            //普通用户  3
+                            if (userType == 1) {
+                                roleService.giveOneRole(user2.getId(), 3);
+                            } else if (userType == 2) {
+                                //企业用户
+                                roleService.giveOneRole(user2.getId(), 2);
+                            }
+                        } catch (Exception e) {
+                            e.printStackTrace();
+                        }
+                        resultMap.put("msg", "注册成功!");
+                        resultMap.put("status", true);
+                    }
+                }
+            }
+        }
+        outJson(resultMap);
+
+    }
+
+    /**
      * 菜单管理（不同的角色显示不同的菜单）
      *
      * @param session session
@@ -98,13 +181,13 @@ public class UserLoginController extends BaseController {
         ModelAndView modelAndView = new ModelAndView();
         User user = (User) session.getAttribute(Constants.LONGIN_USER);
         List<Menu> menuList = menuService.getAllMenu(user.getId());
-
         for (Menu menu : menuList) {
             List<Menu> menuChild = menuService.getAllChlidMenu(user.getId(), menu.getId());
             menu.setChildMenus(menuChild);
         }
-
+        Role ownRole = roleService.getOwnRoleById(user.getId()).get(0);
         session.setAttribute(Constants.LONGIN_USER, user);
+        session.setAttribute(Constants.LONGIN_USER_ROLE, ownRole.getRoleName());
         modelAndView.addObject("menuList", menuList);
         modelAndView.setViewName("main/index");
         return modelAndView;

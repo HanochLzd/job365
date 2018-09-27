@@ -65,46 +65,47 @@
 
     <!--<bean class="com.wang.common.util.IocUtil" lazy-init="false"/>-->
 
-    <!-- springMVC拦截器配置，多个拦截器，顺序执行   -->
-    <!-- 为拦截门户系统发布功能，确保校友登录，配置多个拦截器 create by @wmx -->
-    <!--<mvc:interceptors>-->
-        <!--<mvc:interceptor>-->
-            <!--<mvc:mapping path="/portal/**"/>-->
-            <!--<bean class="com.wang.common.interceptor.PortalReleaseInterceptor">-->
-                <!--<property name="allowUrls">-->
-                    <!--<list>-->
-                        <!--<value>/ptlLogin</value>-->
-                        <!--<value>/show</value>-->
-                    <!--</list>-->
-                <!--</property>-->
-            <!--</bean>-->
-        <!--</mvc:interceptor>-->
-        <!--<mvc:interceptor>-->
-            <!--<mvc:mapping path="/main/**"/>-->
-            <!--<mvc:mapping path="/login/**"/>-->
-            <!--<mvc:mapping path="/active/**"/>-->
-            <!--<mvc:mapping path="/newsinfo/**"/>-->
-            <!--<mvc:mapping path="/activity/**"/>-->
-            <!--<mvc:mapping path="/echarts/**"/>-->
-            <!--<mvc:mapping path="/recruit/**"/>-->
-            <!--<mvc:mapping path="/uniUser/**"/>-->
-            <!--<mvc:mapping path="/dept/**"/>-->
-            <!--<mvc:mapping path="/moduleImage/**"/>-->
-            <!--<mvc:mapping path="/operLog/**"/>-->
-            <!--<mvc:mapping path="/role/**"/>-->
-            <!--<mvc:mapping path="/user/**"/>-->
-            <!--<bean class="com.wang.common.interceptor.CommonInterceptor">-->
-                <!--<property name="allowUrls">-->
-                    <!--<list>-->
-                        <!--<value>/login/init.do</value>-->
-                        <!--<value>/login/doLogin.do</value>-->
-                        <!--<value>/login/register.do</value>-->
-                    <!--</list>-->
-                <!--</property>-->
-            <!--</bean>-->
-        <!--</mvc:interceptor>-->
-
-    <!--</mvc:interceptors>-->
+    <!--springMVC拦截器配置，多个拦截器，顺序执行-->
+    <mvc:interceptors>
+        <mvc:interceptor>
+            <mvc:mapping path="/portal/**"/>
+            <bean class="cn.soft.job.common.interceptor.PortalReleaseInterceptor">
+                <property name="allowUrls">
+                    <list>
+                        <value>/ptlLogin</value>
+                        <value>/show</value>
+                    </list>
+                </property>
+            </bean>
+        </mvc:interceptor>
+        <mvc:interceptor>
+            <mvc:mapping path="/main/**"/>
+            <mvc:mapping path="/login/**"/>
+            <mvc:mapping path="/active/**"/>
+            <mvc:mapping path="/newsinfo/**"/>
+            <mvc:mapping path="/activity/**"/>
+            <mvc:mapping path="/echarts/**"/>
+            <mvc:mapping path="/recruit/**"/>
+            <mvc:mapping path="/uniUser/**"/>
+            <mvc:mapping path="/dept/**"/>
+            <mvc:mapping path="/moduleImage/**"/>
+            <mvc:mapping path="/operLog/**"/>
+            <mvc:mapping path="/role/**"/>
+            <mvc:mapping path="/user/**"/>
 
 
+            <!--基本登录拦截-->
+            <bean class="cn.soft.job.common.interceptor.CommonInterceptor">
+                <property name="allowUrls">
+                    <list>
+                        <value>/login/init.do</value>
+                        <value>/login/doLogin.do</value>
+                        <value>/login/register.do</value>
+                        <value>/login/doRegister.do</value>
+                    </list>
+                </property>
+            </bean>
+        </mvc:interceptor>
+
+    </mvc:interceptors>
 </beans>

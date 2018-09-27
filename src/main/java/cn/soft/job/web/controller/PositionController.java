@@ -78,12 +78,14 @@ public class PositionController extends BaseController {
 
 	@RequestMapping("/save")
 	public void save(Position position, String op) {
+		System.out.println(position);
 		// 定义结果集合
-		Map<String, Object> resultMap = new HashMap<String, Object>();
+		Map<String, Object> resultMap;
 
 		@SuppressWarnings("unused")
 		User user = (User) session.getAttribute(Constants.LONGIN_USER);
-		if (Constants.OP_MODIFY.equals(op)) { // 修改资讯信息
+		if (Constants.OP_MODIFY.equals(op)) {
+			// 修改资讯信息
 			// 设置更新时间
 			position.setUpdateDate(DateUtil.getSystemTime());
 			int flag = positionService.updateByPrimaryKeySelective(position);

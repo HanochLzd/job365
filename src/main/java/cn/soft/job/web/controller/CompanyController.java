@@ -152,8 +152,8 @@ public class CompanyController extends BaseController {
     /**
      * 删除单条
      */
-    @RequestMapping(value="/delCompany")
-    public void delNewsinfo(int id){
+    @RequestMapping(value = "/delCompany")
+    public void delNewsinfo(int id) {
         //定义结果集合
         Map<String, Object> resultMap = new HashMap<String, Object>();
 
@@ -213,7 +213,7 @@ public class CompanyController extends BaseController {
 
 
     @RequestMapping("/show")
-    public ModelAndView show(){
+    public ModelAndView show() {
         User user = (User) session.getAttribute(Constants.LONGIN_USER);
 
         ModelAndView model = new ModelAndView();
@@ -228,7 +228,7 @@ public class CompanyController extends BaseController {
 
         for (Menu menu : menuList) {
 
-            List<Menu> menuChild = menuService.getAllChlidMenu(user.getId(),menu.getId());
+            List<Menu> menuChild = menuService.getAllChlidMenu(user.getId(), menu.getId());
             menu.setChildMenus(menuChild);
 
         }

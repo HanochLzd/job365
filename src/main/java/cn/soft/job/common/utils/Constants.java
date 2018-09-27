@@ -3,6 +3,12 @@ package cn.soft.job.common.utils;
 public class Constants {
 
     public static final String FILE_NAME = "FILE_NAME";
+
+    public static final String LONGIN_USER_ROLE = "LONGIN_USER_ROLE";
+    public static final String ROLE_COMPANY = "company";
+    public static final String ROLE_ADMIN = "admin";
+    public static final String ROLE_USER = "user";
+
     //当前登录用户
     public static final String LONGIN_USER = "LONGIN_USER";
     //当前门户登录用户

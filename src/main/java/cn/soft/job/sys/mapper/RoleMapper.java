@@ -29,4 +29,6 @@ public interface RoleMapper {
     int deleteByPrimiary(int id);
 
     int deleteRoleMenuByRoleId(int id);
+
+    void giveOneRole(@Param("userId") Long id, @Param("roleId") int i);
 }

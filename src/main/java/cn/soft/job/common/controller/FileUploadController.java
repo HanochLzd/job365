@@ -75,7 +75,7 @@ public class FileUploadController extends BaseController {
 					logger.error(e.getMessage(), e);
 				}  
 
-				Map<String,Object> fileData = new HashMap<String, Object>();
+				Map<String,Object> fileData = new HashMap<>(16);
 				fileData.put("fileSize", myfile.getSize());
 				fileData.put("fileName", "logo"+i+".jpg");
 				fileData.put("saveName", saveName);

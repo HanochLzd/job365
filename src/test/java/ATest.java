@@ -8,7 +8,7 @@ import java.util.List;
  * @version 1.0
  * @date 2018/9/6 14:40
  */
-public class ATest {
+public class ATest extends Thread{
 
     @Test
     public void test() {
@@ -36,4 +36,23 @@ public class ATest {
 
         throw new RuntimeException();
     }
+
+    @Test
+    public void test2() throws InterruptedException {
+         ATest aTest = new ATest();
+         aTest.start();
+         Thread.sleep(1000);
+         System.out.println(aTest.isAlive());
+        Thread thread = new Thread(aTest);
+    }
+
+//    @Override
+//    public void run() {
+//        super.run();
+//        try {
+//            Thread.sleep(1000);
+//        } catch (InterruptedException e) {
+//            e.printStackTrace();
+//        }
+//    }
 }

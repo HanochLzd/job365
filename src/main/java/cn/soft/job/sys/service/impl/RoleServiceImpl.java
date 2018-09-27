@@ -28,7 +28,7 @@ public class RoleServiceImpl implements RoleService {
     }
 
     @Override
-    public List<Role> getOwnRoleById(int userid) {
+    public List<Role> getOwnRoleById(Long userid) {
         return roleMapper.getOwnRoleByUserId(userid);
     }
 
@@ -55,5 +55,10 @@ public class RoleServiceImpl implements RoleService {
             logger.debug("role_menu表关联删除失败！");
         }
         return roleMapper.deleteByPrimiary(id);
+    }
+
+    @Override
+    public void giveOneRole(Long id, int i) {
+        roleMapper.giveOneRole(id,i);
     }
 }

@@ -223,7 +223,7 @@ public class UserController extends BaseController {
      */
     @ResponseBody
     @RequestMapping("/getRoleById")
-    public List<ZTreeNode> getRoleById(@RequestParam("userid") int userid) {
+    public List<ZTreeNode> getRoleById(@RequestParam("userid") Long userid) {
         logger.debug("初始化角色树...");
         List<ZTreeNode> roleTreeList = new ArrayList<>();
         List<Role> roleList = roleService.getAllRole();
@@ -237,7 +237,7 @@ public class UserController extends BaseController {
             zTreeNode.setNocheck(false);
             if (roleOwn != null && roleOwn.size() > 0) {
                 for (Role role2 : roleOwn) {
-                    if (role2.getRoleName().equals(role.getRoleName()) && role2.getId() == role.getId()) {
+                    if (role2.getRoleName().equals(role.getRoleName()) && role2.getId().equals(role.getId())) {
                         zTreeNode.setChecked(true);
                     }
                 }

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="cn.soft.job.web.mapper.CategoryMapper">
+    <resultMap type="cn.soft.job.web.pojo.po.Category" id="BaseResultMap">
+        <result property="id" column="id" javaType="Integer" jdbcType="BIGINT"/>
+        <result property="name" column="name" javaType="String"
+                jdbcType="VARCHAR"/>
+        <result property="type" column="type" javaType="Integer"
+                jdbcType="BIGINT"/>
+        <result property="pid" column="pid" javaType="int"
+                jdbcType="BIGINT"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        id, name, type, pid
+    </sql>
+
+    <select id="getAllCategory" parameterType="int" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List"/>
+        from category
+        where type = #{type,jdbcType=INTEGER};
+    </select>
+
+
+</mapper>

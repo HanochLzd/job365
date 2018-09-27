@@ -13,7 +13,7 @@ public interface RoleService {
 
     List<Role> getAllRole();
 
-    List<Role> getOwnRoleById(int userid);
+    List<Role> getOwnRoleById(Long userid);
 
     Role findRoleById(int roleId);
 
@@ -22,4 +22,6 @@ public interface RoleService {
     int updateRole(Role role);
 
     int deleteByPrimiary(int id);
+
+    void giveOneRole(Long id, int i);
 }

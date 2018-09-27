@@ -4,7 +4,7 @@ import java.util.Date;
 
 public class Position {
 
-    private long id;
+    private Integer id;
     private String positionName;
     private String positionSalary;
     private String positionAddress;
@@ -18,7 +18,7 @@ public class Position {
     private Integer category1;
     private Integer category2;
 
-    public long getId() {
+    public Integer getId() {
         return id;
     }
 

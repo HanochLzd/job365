@@ -41,7 +41,7 @@
         });
 
         function register(title, url, w, h) {
-            url = "${baseurl}login/doRegister";
+            url = "${baseurl}login/doRegister.do";
             <%-- window.location.href="<%=basePath%>login/doRegister.do"; --%>
 
             layer_show(title, url, w, h);
